@@ -222,7 +222,7 @@ Item {
             width: 80
 
             shadowReleasedColor: "#002FD0"
-            shadowPressedColor: "#8C0B00"
+            shadowPressedColor: "#000B90"
             pressedColor: "#002FD0"
             releasedColor: "#3F52FF"
             text: qsTr("SEARCH")
