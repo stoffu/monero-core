@@ -64,7 +64,7 @@ Rectangle {
             Label {
                 id: soloLocalDaemonsLabel
                 fontSize: 18
-                color: "#D02020"
+                color: "#1020E0"
                 text: qsTr("(only available for local daemons)")
                 visible: !walletManager.isDaemonLocal(appWindow.currentDaemonAddress)
             }
