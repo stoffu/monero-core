@@ -94,7 +94,7 @@ Rectangle {
 
         Text {
             textFormat: Text.RichText
-            text: "<style type='text/css'>a {text-decoration: none; color: #FF6C3C; font-size: 14px;}</style>" +
+            text: "<style type='text/css'>a {text-decoration: none; color: #5FBCD3; font-size: 14px;}</style>" +
                   "<font size='+2'>" + qsTr("Blackballed outputs") + "</font>" + "<font size='2'> (</font><a href='#'>" + qsTr("help") + "</a><font size='2'>)</font><br>" +
                   qsTr("This sets which outputs are known to be spent, and thus not to be used as privacy placeholders in ring signatures.<br>") +
                   qsTr("You should only have to load a file when you want to refresh the list. Manual adding/removing is possible if needed.") + translationManager.emptyString
@@ -142,7 +142,7 @@ Rectangle {
                 text: qsTr("Select") + translationManager.emptyString
                 shadowReleasedColor: "#FF4304"
                 shadowPressedColor: "#B32D00"
-                releasedColor: "#FF6C3C"
+                releasedColor: "#5FBCD3"
                 pressedColor: "#FF4304"
                 enabled: true
                 onClicked: {
@@ -174,7 +174,7 @@ Rectangle {
                 text: qsTr("Load") + translationManager.emptyString
                 shadowReleasedColor: "#FF4304"
                 shadowPressedColor: "#B32D00"
-                releasedColor: "#FF6C3C"
+                releasedColor: "#5FBCD3"
                 pressedColor: "#FF4304"
                 enabled: !!appWindow.currentWallet
                 onClicked: appWindow.currentWallet.blackballOutputs(walletManager.urlToLocalPath(loadBlackballFileDialog.fileUrl), true)
@@ -211,7 +211,7 @@ Rectangle {
                 text: qsTr("Blackball") + translationManager.emptyString
                 shadowReleasedColor: "#FF4304"
                 shadowPressedColor: "#B32D00"
-                releasedColor: "#FF6C3C"
+                releasedColor: "#5FBCD3"
                 pressedColor: "#FF4304"
                 enabled: !!appWindow.currentWallet && validHex32(blackballOutputLine.text)
                 onClicked: appWindow.currentWallet.blackballOutput(blackballOutputLine.text)
@@ -223,7 +223,7 @@ Rectangle {
                 text: qsTr("Unblackball") + translationManager.emptyString
                 shadowReleasedColor: "#FF4304"
                 shadowPressedColor: "#B32D00"
-                releasedColor: "#FF6C3C"
+                releasedColor: "#5FBCD3"
                 pressedColor: "#FF4304"
                 enabled: !!appWindow.currentWallet && validHex32(blackballOutputLine.text)
                 onClicked: appWindow.currentWallet.unblackballOutput(blackballOutputLine.text)
@@ -232,7 +232,7 @@ Rectangle {
 
         Text {
             textFormat: Text.RichText
-            text: "<style type='text/css'>a {text-decoration: none; color: #FF6C3C; font-size: 14px;}</style>" +
+            text: "<style type='text/css'>a {text-decoration: none; color: #5FBCD3; font-size: 14px;}</style>" +
                   "<font size='+2'>" + qsTr("Rings") + "</font>" + "<font size='2'> (</font><a href='#'>" + qsTr("help") + "</a><font size='2'>)</font><br>" +
                   qsTr("This records rings used by outputs spent on Monero on a key reusing chain, so that the same ring may be reused to avoid privacy issues.") + translationManager.emptyString
             wrapMode: Text.Wrap
@@ -283,7 +283,7 @@ Rectangle {
                 text: qsTr("Get Ring") + translationManager.emptyString
                 shadowReleasedColor: "#FF4304"
                 shadowPressedColor: "#B32D00"
-                releasedColor: "#FF6C3C"
+                releasedColor: "#5FBCD3"
                 pressedColor: "#FF4304"
                 enabled: !!appWindow.currentWallet && validHex32(keyImageLine.text)
                 onClicked: {
@@ -346,7 +346,7 @@ Rectangle {
                 text: qsTr("Set Ring") + translationManager.emptyString
                 shadowReleasedColor: "#FF4304"
                 shadowPressedColor: "#B32D00"
-                releasedColor: "#FF6C3C"
+                releasedColor: "#5FBCD3"
                 pressedColor: "#FF4304"
                 enabled: !!appWindow.currentWallet && validHex32(keyImageLine.text) && validRing(setRingLine.text.trim(), setRingRelative.checked)
                 onClicked: {

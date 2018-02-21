@@ -146,7 +146,7 @@ ListView {
                     Layout.leftMargin: 5 * scaleRatio
                     font.family: "Arial"
                     font.pixelSize: 14 * scaleRatio
-                    color:  (confirmations < confirmationsRequired)? "#FF6C3C" : "#545454"
+                    color:  (confirmations < confirmationsRequired)? "#5FBCD3" : "#545454"
                     text: {
                         if (!isPending)
                             if(confirmations < confirmationsRequired)

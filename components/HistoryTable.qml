@@ -98,7 +98,7 @@ ListView {
             fontSize: 14
             shadowReleasedColor: "#FF4304"
             shadowPressedColor: "#B32D00"
-            releasedColor: "#FF6C3C"
+            releasedColor: "#5FBCD3"
             pressedColor: "#FF4304"
             text: qsTr("Details")
             onClicked: {
@@ -247,7 +247,7 @@ ListView {
                 //elide: Text.ElideRight
                 font.family: "Arial"
                 font.pixelSize: 13
-                color:  (confirmations < confirmationsRequired)? "#FF6C3C" : "#545454"
+                color:  (confirmations < confirmationsRequired)? "#5FBCD3" : "#545454"
                 text: {
                     if (!isPending)
                         if(confirmations < confirmationsRequired)

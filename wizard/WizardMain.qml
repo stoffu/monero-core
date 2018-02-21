@@ -317,7 +317,7 @@ ColumnLayout {
 
         width: 50 * scaleRatio; height: 50 * scaleRatio
         radius: 25
-        color: prevArea.containsMouse ? "#FF4304" : "#FF6C3C"
+        color: prevArea.containsMouse ? "#FF4304" : "#5FBCD3"
 
         Image {
             anchors.centerIn: parent
@@ -342,7 +342,7 @@ ColumnLayout {
         visible: currentPage > 1 && currentPage < pages.length - 1
         width: 50 * scaleRatio; height: 50 * scaleRatio
         radius: 25
-        color: enabled ? nextArea.containsMouse ? "#FF4304" : "#FF6C3C" : "#DBDBDB"
+        color: enabled ? nextArea.containsMouse ? "#FF4304" : "#5FBCD3" : "#DBDBDB"
 
 
         Image {
@@ -367,7 +367,7 @@ ColumnLayout {
         text: qsTr("USE AEON") + translationManager.emptyString
         shadowReleasedColor: "#FF4304"
         shadowPressedColor: "#B32D00"
-        releasedColor: "#FF6C3C"
+        releasedColor: "#5FBCD3"
         pressedColor: "#FF4304"
         visible: parent.paths[currentPath][currentPage] === finishPage
         onClicked: {
@@ -384,7 +384,7 @@ ColumnLayout {
        text: qsTr("Create wallet") + translationManager.emptyString
        shadowReleasedColor: "#FF4304"
        shadowPressedColor: "#B32D00"
-       releasedColor: "#FF6C3C"
+       releasedColor: "#5FBCD3"
        pressedColor: "#FF4304"
        visible: currentPath === "create_view_only_wallet" &&  parent.paths[currentPath][currentPage] === passwordPage
        enabled: passwordPage.passwordsMatch
@@ -416,7 +416,7 @@ ColumnLayout {
        text: qsTr("Abort") + translationManager.emptyString
        shadowReleasedColor: "#FF4304"
        shadowPressedColor: "#B32D00"
-       releasedColor: "#FF6C3C"
+       releasedColor: "#5FBCD3"
        pressedColor: "#FF4304"
        visible: currentPath === "create_view_only_wallet" &&  parent.paths[currentPath][currentPage] === passwordPage
        onClicked: {

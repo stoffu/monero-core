@@ -145,7 +145,7 @@ Rectangle {
                     text: qsTr("Sign") + translationManager.emptyString
                     shadowReleasedColor: "#FF4304"
                     shadowPressedColor: "#B32D00"
-                    releasedColor: "#FF6C3C"
+                    releasedColor: "#5FBCD3"
                     pressedColor: "#FF4304"
                     enabled: true
                     onClicked: {
@@ -183,7 +183,7 @@ Rectangle {
                     text: qsTr("Select") + translationManager.emptyString
                     shadowReleasedColor: "#FF4304"
                     shadowPressedColor: "#B32D00"
-                    releasedColor: "#FF6C3C"
+                    releasedColor: "#5FBCD3"
                     pressedColor: "#FF4304"
                     enabled: true
                     onClicked: {
@@ -215,7 +215,7 @@ Rectangle {
                     text: qsTr("Sign") + translationManager.emptyString
                     shadowReleasedColor: "#FF4304"
                     shadowPressedColor: "#B32D00"
-                    releasedColor: "#FF6C3C"
+                    releasedColor: "#5FBCD3"
                     pressedColor: "#FF4304"
                     enabled: true
                     onClicked: {
@@ -302,7 +302,7 @@ Rectangle {
                     text: qsTr("Verify") + translationManager.emptyString
                     shadowReleasedColor: "#FF4304"
                     shadowPressedColor: "#B32D00"
-                    releasedColor: "#FF6C3C"
+                    releasedColor: "#5FBCD3"
                     pressedColor: "#FF4304"
                     enabled: true
                     onClicked: {
@@ -340,7 +340,7 @@ Rectangle {
                     text: qsTr("Select") + translationManager.emptyString
                     shadowReleasedColor: "#FF4304"
                     shadowPressedColor: "#B32D00"
-                    releasedColor: "#FF6C3C"
+                    releasedColor: "#5FBCD3"
                     pressedColor: "#FF4304"
                     enabled: true
                     onClicked: {
@@ -371,7 +371,7 @@ Rectangle {
                     text: qsTr("Verify") + translationManager.emptyString
                     shadowReleasedColor: "#FF4304"
                     shadowPressedColor: "#B32D00"
-                    releasedColor: "#FF6C3C"
+                    releasedColor: "#5FBCD3"
                     pressedColor: "#FF4304"
                     enabled: true
                     onClicked: {
@@ -383,7 +383,7 @@ Rectangle {
 
             Text {
                 id: verifyAddressLabel
-                text: "<style type='text/css'>a {text-decoration: none; color: #FF6C3C; font-size: " + (14 * scaleRatio) + "px;}</style>" +
+                text: "<style type='text/css'>a {text-decoration: none; color: #5FBCD3; font-size: " + (14 * scaleRatio) + "px;}</style>" +
                       qsTr("Signing address") +
                       "<font size='" + (2 * scaleRatio) + "'>  ( " +
                       qsTr("Paste in or select from <a href='#'>Address book</a>") +
