@@ -719,12 +719,12 @@ void Wallet::setWalletCreationHeight(quint64 height)
 
 QString Wallet::getDaemonLogPath() const
 {
-    return QString::fromStdString(m_walletImpl->getDefaultDataDir()) + "/bitmonero.log";
+    return QString::fromStdString(m_walletImpl->getDefaultDataDir()) + "/aeon.log";
 }
 
 QString Wallet::getWalletLogPath() const
 {
-    return QCoreApplication::applicationDirPath() + "/monero-wallet-gui.log";
+    return QCoreApplication::applicationDirPath() + "/aeon-wallet-gui.log";
 }
 
 Wallet::Wallet(Monero::Wallet *w, QObject *parent)

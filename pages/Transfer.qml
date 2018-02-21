@@ -140,7 +140,7 @@ Rectangle {
 
                       Image {
                           anchors.centerIn: parent
-                          source: "../images/moneroIcon.png"
+                          source: "../images/aeonIcon.png"
                       }
                   }
                   // Amount input

@@ -385,7 +385,7 @@ Rectangle {
                     id: remoteNodeEdit
                     Layout.minimumWidth: 100 * scaleRatio
                     daemonAddrText: persistentSettings.remoteNodeAddress.split(":")[0].trim()
-                    daemonPortText: (persistentSettings.remoteNodeAddress.split(":")[1].trim() == "") ? "18081" : persistentSettings.remoteNodeAddress.split(":")[1]
+                    daemonPortText: (persistentSettings.remoteNodeAddress.split(":")[1].trim() == "") ? "11181" : persistentSettings.remoteNodeAddress.split(":")[1]
                     onEditingFinished: {
                         persistentSettings.remoteNodeAddress = remoteNodeEdit.getAddress();
                         console.log("setting remote node to " + persistentSettings.remoteNodeAddress)
@@ -514,7 +514,7 @@ Rectangle {
         TextBlock {
             id: guiMoneroVersion
             Layout.fillWidth: true
-            text: qsTr("Embedded Monero version: ") + Version.GUI_MONERO_VERSION + translationManager.emptyString
+            text: qsTr("Embedded Aeon version: ") + Version.GUI_MONERO_VERSION + translationManager.emptyString
         }
         TextBlock {
             id: restoreHeightText
