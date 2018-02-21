@@ -195,7 +195,7 @@ Rectangle {
                 StandardButton {
                     shadowReleasedColor: "#FF4304"
                     shadowPressedColor: "#B32D00"
-                    releasedColor: "#FF6C3C"
+                    releasedColor: "#5FBCD3"
                     pressedColor: "#FF4304"
                     text: qsTr("Create new address") + translationManager.emptyString;
                     onClicked: {
@@ -212,7 +212,7 @@ Rectangle {
                 StandardButton {
                     shadowReleasedColor: "#FF4304"
                     shadowPressedColor: "#B32D00"
-                    releasedColor: "#FF6C3C"
+                    releasedColor: "#5FBCD3"
                     pressedColor: "#FF4304"
                     enabled: table.currentIndex > 0
                     text: qsTr("Rename") + translationManager.emptyString;
@@ -261,7 +261,7 @@ Rectangle {
             Label {
                 id: trackingLabel
                 textFormat: Text.RichText
-                text: "<style type='text/css'>a {text-decoration: none; color: #FF6C3C; font-size: 14px;}</style>" +
+                text: "<style type='text/css'>a {text-decoration: none; color: #5FBCD3; font-size: 14px;}</style>" +
                       qsTr("Tracking") +
                       "<font size='2'> (</font><a href='#'>" +
                       qsTr("help") +

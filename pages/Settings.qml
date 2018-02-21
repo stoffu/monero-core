@@ -81,7 +81,7 @@ Rectangle {
                 text: qsTr("Close wallet") + translationManager.emptyString
                 shadowReleasedColor: "#FF4304"
                 shadowPressedColor: "#B32D00"
-                releasedColor: "#FF6C3C"
+                releasedColor: "#5FBCD3"
                 pressedColor: "#FF4304"
                 visible: true
                 onClicked: {
@@ -96,7 +96,7 @@ Rectangle {
                 text: qsTr("Create view only wallet") + translationManager.emptyString
                 shadowReleasedColor: "#FF4304"
                 shadowPressedColor: "#B32D00"
-                releasedColor: "#FF6C3C"
+                releasedColor: "#5FBCD3"
                 pressedColor: "#FF4304"
                 visible: true
                 onClicked: {
@@ -110,7 +110,7 @@ Rectangle {
                 id: rescanWalletbutton
                 shadowReleasedColor: "#FF4304"
                 shadowPressedColor: "#B32D00"
-                releasedColor: "#FF6C3C"
+                releasedColor: "#5FBCD3"
                 pressedColor: "#FF4304"
                 text: qsTr("Rescan wallet cache") + translationManager.emptyString
                 onClicked: {
@@ -145,7 +145,7 @@ Rectangle {
                 text: qsTr("Rescan wallet balance") + translationManager.emptyString
                 shadowReleasedColor: "#FF4304"
                 shadowPressedColor: "#B32D00"
-                releasedColor: "#FF6C3C"
+                releasedColor: "#5FBCD3"
                 pressedColor: "#FF4304"
                 onClicked: {
                     if (!currentWallet.rescanSpent()) {
@@ -170,7 +170,7 @@ Rectangle {
                 text: qsTr("Change password") + translationManager.emptyString
                 shadowReleasedColor: "#FF4304"
                 shadowPressedColor: "#B32D00"
-                releasedColor: "#FF6C3C"
+                releasedColor: "#5FBCD3"
                 pressedColor: "#FF4304"
                 onClicked: {
                     passwordDialog.onAcceptedCallback = function() {
@@ -201,7 +201,7 @@ Rectangle {
                 text: qsTr("Local Node") + translationManager.emptyString
                 shadowReleasedColor: "#FF4304"
                 shadowPressedColor: "#B32D00"
-                releasedColor: "#FF6C3C"
+                releasedColor: "#5FBCD3"
                 pressedColor: "#FF4304"
                 onClicked: {
                     appWindow.disconnectRemoteNode();
@@ -215,7 +215,7 @@ Rectangle {
                 text: qsTr("Remote Node") + translationManager.emptyString
                 shadowReleasedColor: "#FF4304"
                 shadowPressedColor: "#B32D00"
-                releasedColor: "#FF6C3C"
+                releasedColor: "#5FBCD3"
                 pressedColor: "#FF4304"
                 onClicked: {
                     appWindow.connectRemoteNode();
@@ -257,7 +257,7 @@ Rectangle {
                 text: qsTr("Start Local Node") + translationManager.emptyString
                 shadowReleasedColor: "#FF4304"
                 shadowPressedColor: "#B32D00"
-                releasedColor: "#FF6C3C"
+                releasedColor: "#5FBCD3"
                 pressedColor: "#FF4304"
                 onClicked: {
                     // Set current daemon address to local
@@ -272,7 +272,7 @@ Rectangle {
                 text: qsTr("Stop Local Node") + translationManager.emptyString
                 shadowReleasedColor: "#FF4304"
                 shadowPressedColor: "#B32D00"
-                releasedColor: "#FF6C3C"
+                releasedColor: "#5FBCD3"
                 pressedColor: "#FF4304"
                 onClicked: {
                     appWindow.stopDaemon()
@@ -285,7 +285,7 @@ Rectangle {
                 text: qsTr("Show status") + translationManager.emptyString
                 shadowReleasedColor: "#FF4304"
                 shadowPressedColor: "#B32D00"
-                releasedColor: "#FF6C3C"
+                releasedColor: "#5FBCD3"
                 pressedColor: "#FF4304"
                 onClicked: {
                     daemonManager.sendCommand("status",currentWallet.testnet);
@@ -397,7 +397,7 @@ Rectangle {
                     text: qsTr("Connect") + translationManager.emptyString
                     shadowReleasedColor: "#FF4304"
                     shadowPressedColor: "#B32D00"
-                    releasedColor: "#FF6C3C"
+                    releasedColor: "#5FBCD3"
                     pressedColor: "#FF4304"
                     onClicked: {
                         // Update daemon login
@@ -520,7 +520,7 @@ Rectangle {
             id: restoreHeightText
             Layout.fillWidth: true
             textFormat: Text.RichText
-            property var txt: "<style type='text/css'>a {text-decoration: none; color: #FF6C3C}</style>" + qsTr("Wallet creation height: ") + currentWallet.walletCreationHeight + translationManager.emptyString
+            property var txt: "<style type='text/css'>a {text-decoration: none; color: #5FBCD3}</style>" + qsTr("Wallet creation height: ") + currentWallet.walletCreationHeight + translationManager.emptyString
             property var linkTxt: qsTr(" <a href='#'>(Click to change)</a>") + translationManager.emptyString
             text: (typeof currentWallet == "undefined") ? "" : txt + linkTxt
 
@@ -550,7 +550,7 @@ Rectangle {
                 text: qsTr("Save") + translationManager.emptyString
                 shadowReleasedColor: "#FF4304"
                 shadowPressedColor: "#B32D00"
-                releasedColor: "#FF6C3C"
+                releasedColor: "#5FBCD3"
                 pressedColor: "#FF4304"
 
                 onClicked: {
