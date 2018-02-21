@@ -177,7 +177,7 @@ ColumnLayout {
             id: recoverFromSeedButton
             text: qsTr("Restore from seed") + translationManager.emptyString
             shadowReleasedColor: "#2C89A0"
-            shadowPressedColor: "#B32D00"
+            shadowPressedColor: "#164450"
             releasedColor: "#5FBCD3"
             pressedColor: "#2C89A0"
             enabled: recoverFromKeys.visible
@@ -191,7 +191,7 @@ ColumnLayout {
             id: recoverFromKeysButton
             text: qsTr("Restore from keys") + translationManager.emptyString
             shadowReleasedColor: "#2C89A0"
-            shadowPressedColor: "#B32D00"
+            shadowPressedColor: "#164450"
             releasedColor: "#5FBCD3"
             pressedColor: "#2C89A0"
             enabled: recoverFromSeed.visible
@@ -205,7 +205,7 @@ ColumnLayout {
             id: qrfinderButton
             text: qsTr("From QR Code") + translationManager.emptyString
             shadowReleasedColor: "#2C89A0"
-            shadowPressedColor: "#B32D00"
+            shadowPressedColor: "#164450"
             releasedColor: "#5FBCD3"
             pressedColor: "#2C89A0"
             visible : true //appWindow.qrScannerEnabled

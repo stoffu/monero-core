@@ -88,7 +88,7 @@ Rectangle {
             width: 60
             text: qsTr("SEND")
             shadowReleasedColor: "#2C89A0"
-            shadowPressedColor: "#B32D00"
+            shadowPressedColor: "#164450"
             releasedColor: "#5FBCD3"
             pressedColor: "#2C89A0"
         }

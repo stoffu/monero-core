@@ -32,7 +32,7 @@ import QtQuick.Layouts 1.1
 Item {
     id: button
     height: 37 * scaleRatio
-    property string shadowPressedColor: "#B32D00"
+    property string shadowPressedColor: "#164450"
     property string shadowReleasedColor: "#2C89A0"
     property string pressedColor: "#2C89A0"
     property string releasedColor: "#5FBCD3"

@@ -55,7 +55,7 @@ Rectangle {
                 id: qrfinderButton
                 text: qsTr("Qr Code") + translationManager.emptyString
                 shadowReleasedColor: "#2C89A0"
-                shadowPressedColor: "#B32D00"
+                shadowPressedColor: "#164450"
                 releasedColor: "#5FBCD3"
                 pressedColor: "#2C89A0"
                 visible : appWindow.qrScannerEnabled
@@ -105,7 +105,7 @@ Rectangle {
             Layout.bottomMargin: 17 * scaleRatio
             StandardButton {
                 shadowReleasedColor: "#2C89A0"
-                shadowPressedColor: "#B32D00"
+                shadowPressedColor: "#164450"
                 releasedColor: "#5FBCD3"
                 pressedColor: "#2C89A0"
                 text: qsTr("Add") + translationManager.emptyString
