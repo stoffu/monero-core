@@ -138,7 +138,7 @@ Rectangle {
                     width: 110
                     text: qsTr("Start mining") + translationManager.emptyString
                     shadowReleasedColor: "#2C89A0"
-                    shadowPressedColor: "#B32D00"
+                    shadowPressedColor: "#164450"
                     releasedColor: "#5FBCD3"
                     pressedColor: "#2C89A0"
                     onClicked: {
@@ -163,7 +163,7 @@ Rectangle {
                     width: 110
                     text: qsTr("Stop mining") + translationManager.emptyString
                     shadowReleasedColor: "#2C89A0"
-                    shadowPressedColor: "#B32D00"
+                    shadowPressedColor: "#164450"
                     releasedColor: "#5FBCD3"
                     pressedColor: "#2C89A0"
                     onClicked: {

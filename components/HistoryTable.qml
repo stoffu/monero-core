@@ -97,7 +97,7 @@ ListView {
             width: 80
             fontSize: 14
             shadowReleasedColor: "#2C89A0"
-            shadowPressedColor: "#B32D00"
+            shadowPressedColor: "#164450"
             releasedColor: "#5FBCD3"
             pressedColor: "#2C89A0"
             text: qsTr("Details")

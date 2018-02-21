@@ -144,7 +144,7 @@ Rectangle {
                     anchors.right: parent.right
                     text: qsTr("Sign") + translationManager.emptyString
                     shadowReleasedColor: "#2C89A0"
-                    shadowPressedColor: "#B32D00"
+                    shadowPressedColor: "#164450"
                     releasedColor: "#5FBCD3"
                     pressedColor: "#2C89A0"
                     enabled: true
@@ -182,7 +182,7 @@ Rectangle {
                     anchors.rightMargin: 17 * scaleRatio
                     text: qsTr("Select") + translationManager.emptyString
                     shadowReleasedColor: "#2C89A0"
-                    shadowPressedColor: "#B32D00"
+                    shadowPressedColor: "#164450"
                     releasedColor: "#5FBCD3"
                     pressedColor: "#2C89A0"
                     enabled: true
@@ -214,7 +214,7 @@ Rectangle {
                     anchors.right: parent.right
                     text: qsTr("Sign") + translationManager.emptyString
                     shadowReleasedColor: "#2C89A0"
-                    shadowPressedColor: "#B32D00"
+                    shadowPressedColor: "#164450"
                     releasedColor: "#5FBCD3"
                     pressedColor: "#2C89A0"
                     enabled: true
@@ -301,7 +301,7 @@ Rectangle {
                     anchors.right: parent.right
                     text: qsTr("Verify") + translationManager.emptyString
                     shadowReleasedColor: "#2C89A0"
-                    shadowPressedColor: "#B32D00"
+                    shadowPressedColor: "#164450"
                     releasedColor: "#5FBCD3"
                     pressedColor: "#2C89A0"
                     enabled: true
@@ -339,7 +339,7 @@ Rectangle {
                     anchors.rightMargin: 17 * scaleRatio
                     text: qsTr("Select") + translationManager.emptyString
                     shadowReleasedColor: "#2C89A0"
-                    shadowPressedColor: "#B32D00"
+                    shadowPressedColor: "#164450"
                     releasedColor: "#5FBCD3"
                     pressedColor: "#2C89A0"
                     enabled: true
@@ -370,7 +370,7 @@ Rectangle {
                     anchors.right: parent.right
                     text: qsTr("Verify") + translationManager.emptyString
                     shadowReleasedColor: "#2C89A0"
-                    shadowPressedColor: "#B32D00"
+                    shadowPressedColor: "#164450"
                     releasedColor: "#5FBCD3"
                     pressedColor: "#2C89A0"
                     enabled: true

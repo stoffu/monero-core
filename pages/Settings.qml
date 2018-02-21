@@ -80,7 +80,7 @@ Rectangle {
                 id: closeWalletButton
                 text: qsTr("Close wallet") + translationManager.emptyString
                 shadowReleasedColor: "#2C89A0"
-                shadowPressedColor: "#B32D00"
+                shadowPressedColor: "#164450"
                 releasedColor: "#5FBCD3"
                 pressedColor: "#2C89A0"
                 visible: true
@@ -95,7 +95,7 @@ Rectangle {
                 id: createViewOnlyWalletButton
                 text: qsTr("Create view only wallet") + translationManager.emptyString
                 shadowReleasedColor: "#2C89A0"
-                shadowPressedColor: "#B32D00"
+                shadowPressedColor: "#164450"
                 releasedColor: "#5FBCD3"
                 pressedColor: "#2C89A0"
                 visible: true
@@ -109,7 +109,7 @@ Rectangle {
             StandardButton {
                 id: rescanWalletbutton
                 shadowReleasedColor: "#2C89A0"
-                shadowPressedColor: "#B32D00"
+                shadowPressedColor: "#164450"
                 releasedColor: "#5FBCD3"
                 pressedColor: "#2C89A0"
                 text: qsTr("Rescan wallet cache") + translationManager.emptyString
@@ -144,7 +144,7 @@ Rectangle {
                 enabled: !persistentSettings.useRemoteNode
                 text: qsTr("Rescan wallet balance") + translationManager.emptyString
                 shadowReleasedColor: "#2C89A0"
-                shadowPressedColor: "#B32D00"
+                shadowPressedColor: "#164450"
                 releasedColor: "#5FBCD3"
                 pressedColor: "#2C89A0"
                 onClicked: {
@@ -169,7 +169,7 @@ Rectangle {
                 id: changePasswordButton
                 text: qsTr("Change password") + translationManager.emptyString
                 shadowReleasedColor: "#2C89A0"
-                shadowPressedColor: "#B32D00"
+                shadowPressedColor: "#164450"
                 releasedColor: "#5FBCD3"
                 pressedColor: "#2C89A0"
                 onClicked: {
@@ -200,7 +200,7 @@ Rectangle {
                 Layout.fillWidth: false
                 text: qsTr("Local Node") + translationManager.emptyString
                 shadowReleasedColor: "#2C89A0"
-                shadowPressedColor: "#B32D00"
+                shadowPressedColor: "#164450"
                 releasedColor: "#5FBCD3"
                 pressedColor: "#2C89A0"
                 onClicked: {
@@ -214,7 +214,7 @@ Rectangle {
                 Layout.fillWidth: false
                 text: qsTr("Remote Node") + translationManager.emptyString
                 shadowReleasedColor: "#2C89A0"
-                shadowPressedColor: "#B32D00"
+                shadowPressedColor: "#164450"
                 releasedColor: "#5FBCD3"
                 pressedColor: "#2C89A0"
                 onClicked: {
@@ -256,7 +256,7 @@ Rectangle {
                 id: startDaemonButton
                 text: qsTr("Start Local Node") + translationManager.emptyString
                 shadowReleasedColor: "#2C89A0"
-                shadowPressedColor: "#B32D00"
+                shadowPressedColor: "#164450"
                 releasedColor: "#5FBCD3"
                 pressedColor: "#2C89A0"
                 onClicked: {
@@ -274,7 +274,7 @@ Rectangle {
                 id: stopDaemonButton
                 text: qsTr("Stop Local Node") + translationManager.emptyString
                 shadowReleasedColor: "#2C89A0"
-                shadowPressedColor: "#B32D00"
+                shadowPressedColor: "#164450"
                 releasedColor: "#5FBCD3"
                 pressedColor: "#2C89A0"
                 onClicked: {
@@ -287,7 +287,7 @@ Rectangle {
                 id: daemonStatusButton
                 text: qsTr("Show status") + translationManager.emptyString
                 shadowReleasedColor: "#2C89A0"
-                shadowPressedColor: "#B32D00"
+                shadowPressedColor: "#164450"
                 releasedColor: "#5FBCD3"
                 pressedColor: "#2C89A0"
                 onClicked: {
@@ -420,7 +420,7 @@ Rectangle {
                     id: remoteNodeSave
                     text: qsTr("Connect") + translationManager.emptyString
                     shadowReleasedColor: "#2C89A0"
-                    shadowPressedColor: "#B32D00"
+                    shadowPressedColor: "#164450"
                     releasedColor: "#5FBCD3"
                     pressedColor: "#2C89A0"
                     onClicked: {
@@ -573,7 +573,7 @@ Rectangle {
                 Layout.leftMargin: 30
                 text: qsTr("Save") + translationManager.emptyString
                 shadowReleasedColor: "#2C89A0"
-                shadowPressedColor: "#B32D00"
+                shadowPressedColor: "#164450"
                 releasedColor: "#5FBCD3"
                 pressedColor: "#2C89A0"
 

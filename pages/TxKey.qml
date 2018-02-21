@@ -185,7 +185,7 @@ Rectangle {
             width: 60
             text: qsTr("Generate") + translationManager.emptyString
             shadowReleasedColor: "#2C89A0"
-            shadowPressedColor: "#B32D00"
+            shadowPressedColor: "#164450"
             releasedColor: "#5FBCD3"
             pressedColor: "#2C89A0"
             enabled: checkTxID(getProofTxIdLine.text) && (getProofAddressLine.text.length == 0 || checkAddress(getProofAddressLine.text, appWindow.persistentSettings.nettype))
@@ -325,7 +325,7 @@ Rectangle {
             width: 60
             text: qsTr("Check") + translationManager.emptyString
             shadowReleasedColor: "#2C89A0"
-            shadowPressedColor: "#B32D00"
+            shadowPressedColor: "#164450"
             releasedColor: "#5FBCD3"
             pressedColor: "#2C89A0"
             enabled: checkTxID(checkProofTxIdLine.text) && checkSignature(checkProofSignatureLine.text) && ((checkProofSignatureLine.text.indexOf("SpendProofV") === 0 && checkProofAddressLine.text.length == 0) || (checkProofSignatureLine.text.indexOf("SpendProofV") !== 0 && checkAddress(checkProofAddressLine.text, appWindow.persistentSettings.nettype)))

@@ -163,7 +163,7 @@ Rectangle {
                       width: 60 * scaleRatio
                       text: qsTr("All") + translationManager.emptyString
                       shadowReleasedColor: "#2C89A0"
-                      shadowPressedColor: "#B32D00"
+                      shadowPressedColor: "#164450"
                       releasedColor: "#5FBCD3"
                       pressedColor: "#2C89A0"
                       enabled : true
@@ -203,7 +203,7 @@ Rectangle {
                   Layout.fillWidth: true
                   id: priorityDropdown
                   shadowReleasedColor: "#2C89A0"
-                  shadowPressedColor: "#B32D00"
+                  shadowPressedColor: "#164450"
                   releasedColor: "#5FBCD3"
                   pressedColor: "#2C89A0"
               }
@@ -235,7 +235,7 @@ Rectangle {
                   id: qrfinderButton
                   text: qsTr("QR Code") + translationManager.emptyString
                   shadowReleasedColor: "#2C89A0"
-                  shadowPressedColor: "#B32D00"
+                  shadowPressedColor: "#164450"
                   releasedColor: "#5FBCD3"
                   pressedColor: "#2C89A0"
                   visible : appWindow.qrScannerEnabled
@@ -259,7 +259,7 @@ Rectangle {
                   width: 60 * scaleRatio
                   text: qsTr("Resolve") + translationManager.emptyString
                   shadowReleasedColor: "#2C89A0"
-                  shadowPressedColor: "#B32D00"
+                  shadowPressedColor: "#164450"
                   releasedColor: "#5FBCD3"
                   pressedColor: "#2C89A0"
                   enabled : isValidOpenAliasAddress(addressLine.text)
@@ -326,7 +326,7 @@ Rectangle {
               Layout.topMargin: 17 * scaleRatio
               text: qsTr("Send") + translationManager.emptyString
               shadowReleasedColor: "#2C89A0"
-              shadowPressedColor: "#B32D00"
+              shadowPressedColor: "#164450"
               releasedColor: "#5FBCD3"
               pressedColor: "#2C89A0"
               enabled : !appWindow.viewOnly && pageRoot.checkInformation(amountLine.text, addressLine.text, paymentIdLine.text, appWindow.persistentSettings.nettype)
@@ -454,7 +454,7 @@ Rectangle {
                 id: sweepUnmixableButton
                 text: qsTr("Sweep Unmixable") + translationManager.emptyString
                 shadowReleasedColor: "#2C89A0"
-                shadowPressedColor: "#B32D00"
+                shadowPressedColor: "#164450"
                 releasedColor: "#5FBCD3"
                 pressedColor: "#2C89A0"
                 enabled : pageRoot.enabled
@@ -468,7 +468,7 @@ Rectangle {
                 id: saveTxButton
                 text: qsTr("Create tx file") + translationManager.emptyString
                 shadowReleasedColor: "#2C89A0"
-                shadowPressedColor: "#B32D00"
+                shadowPressedColor: "#164450"
                 releasedColor: "#5FBCD3"
                 pressedColor: "#2C89A0"
                 visible: appWindow.viewOnly
@@ -490,7 +490,7 @@ Rectangle {
                 id: signTxButton
                 text: qsTr("Sign tx file") + translationManager.emptyString
                 shadowReleasedColor: "#2C89A0"
-                shadowPressedColor: "#B32D00"
+                shadowPressedColor: "#164450"
                 releasedColor: "#5FBCD3"
                 pressedColor: "#2C89A0"
                 visible: !appWindow.viewOnly
@@ -504,7 +504,7 @@ Rectangle {
                 id: submitTxButton
                 text: qsTr("Submit tx file") + translationManager.emptyString
                 shadowReleasedColor: "#2C89A0"
-                shadowPressedColor: "#B32D00"
+                shadowPressedColor: "#164450"
                 releasedColor: "#5FBCD3"
                 pressedColor: "#2C89A0"
                 visible: appWindow.viewOnly

@@ -141,7 +141,7 @@ Rectangle {
                 anchors.rightMargin: 17 * scaleRatio
                 text: qsTr("Select") + translationManager.emptyString
                 shadowReleasedColor: "#2C89A0"
-                shadowPressedColor: "#B32D00"
+                shadowPressedColor: "#164450"
                 releasedColor: "#5FBCD3"
                 pressedColor: "#2C89A0"
                 enabled: true
@@ -173,7 +173,7 @@ Rectangle {
                 anchors.right: parent.right
                 text: qsTr("Load") + translationManager.emptyString
                 shadowReleasedColor: "#2C89A0"
-                shadowPressedColor: "#B32D00"
+                shadowPressedColor: "#164450"
                 releasedColor: "#5FBCD3"
                 pressedColor: "#2C89A0"
                 enabled: !!appWindow.currentWallet
@@ -210,7 +210,7 @@ Rectangle {
                 id: blackballButton
                 text: qsTr("Blackball") + translationManager.emptyString
                 shadowReleasedColor: "#2C89A0"
-                shadowPressedColor: "#B32D00"
+                shadowPressedColor: "#164450"
                 releasedColor: "#5FBCD3"
                 pressedColor: "#2C89A0"
                 enabled: !!appWindow.currentWallet && validHex32(blackballOutputLine.text)
@@ -222,7 +222,7 @@ Rectangle {
                 anchors.right: parent.right
                 text: qsTr("Unblackball") + translationManager.emptyString
                 shadowReleasedColor: "#2C89A0"
-                shadowPressedColor: "#B32D00"
+                shadowPressedColor: "#164450"
                 releasedColor: "#5FBCD3"
                 pressedColor: "#2C89A0"
                 enabled: !!appWindow.currentWallet && validHex32(blackballOutputLine.text)
@@ -282,7 +282,7 @@ Rectangle {
                 id: getRingButton
                 text: qsTr("Get Ring") + translationManager.emptyString
                 shadowReleasedColor: "#2C89A0"
-                shadowPressedColor: "#B32D00"
+                shadowPressedColor: "#164450"
                 releasedColor: "#5FBCD3"
                 pressedColor: "#2C89A0"
                 enabled: !!appWindow.currentWallet && validHex32(keyImageLine.text)
@@ -345,7 +345,7 @@ Rectangle {
                 id: setRingButton
                 text: qsTr("Set Ring") + translationManager.emptyString
                 shadowReleasedColor: "#2C89A0"
-                shadowPressedColor: "#B32D00"
+                shadowPressedColor: "#164450"
                 releasedColor: "#5FBCD3"
                 pressedColor: "#2C89A0"
                 enabled: !!appWindow.currentWallet && validHex32(keyImageLine.text) && validRing(setRingLine.text.trim(), setRingRelative.checked)
