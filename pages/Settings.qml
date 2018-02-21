@@ -41,7 +41,7 @@ Rectangle {
     property bool viewOnly: false
     id: page
 
-    color: "#F0EEEE"
+    color: "#EEEEF8"
 
     Clipboard { id: clipboard }
 

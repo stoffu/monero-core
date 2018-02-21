@@ -34,7 +34,7 @@ import moneroComponents.AddressBookModel 1.0
 
 Rectangle {
     id: root
-    color: "#F0EEEE"
+    color: "#EEEEF8"
     property var model
 
     ColumnLayout {

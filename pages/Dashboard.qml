@@ -30,7 +30,7 @@ import QtQuick 2.0
 import "../components"
 
 Rectangle {
-    color: "#F0EEEE"
+    color: "#EEEEF8"
 
     SearchInput {
         id: searchInput

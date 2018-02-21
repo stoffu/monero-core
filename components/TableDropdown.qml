@@ -70,7 +70,7 @@ Item {
             height: parent.height - 1
             y: dropdown.expanded || dropArea.height > 0 ? 1 : 0
             //radius: 3
-            color: dropdown.expanded || dropArea.height > 0 ? "#DBDBDB" : "#F0EEEE"
+            color: dropdown.expanded || dropArea.height > 0 ? "#DBDBDB" : "#EEEEF8"
         }
 
         Rectangle {
@@ -190,7 +190,7 @@ Item {
                         anchors.left: parent.left
                         anchors.right: parent.right
                         height: 30
-                        color: containsMouse ? "#F0EEEE" : "#DBDBDB"
+                        color: containsMouse ? "#EEEEF8" : "#DBDBDB"
                         //radius: index === repeater.count - 1 ? 5 : 0
                         Rectangle {
                             anchors.left: parent.left

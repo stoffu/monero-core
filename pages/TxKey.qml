@@ -36,7 +36,7 @@ import moneroComponents.Clipboard 1.0
 
 Rectangle {
 
-    color: "#F0EEEE"
+    color: "#EEEEF8"
 
     Clipboard { id: clipboard }
 

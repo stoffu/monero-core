@@ -69,7 +69,7 @@ Rectangle {
     signal getProofClicked(string txid, string address, string message);
     signal checkProofClicked(string txid, string address, string message, string signature);
 
-    color: "#F0EEEE"
+    color: "#EEEEF8"
 
     onCurrentViewChanged: {
         if (previousView) {
