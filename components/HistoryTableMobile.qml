@@ -106,7 +106,7 @@ ListView {
             anchors.topMargin: parent.height/2 - this.height/2
             width: 30 * scaleRatio; height: 30 * scaleRatio
             radius: 25
-            color: "#FF4304"
+            color: "#2C89A0"
 
             Image {
                 width: 20 * scaleRatio

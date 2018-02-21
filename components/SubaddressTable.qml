@@ -102,7 +102,7 @@ ListView {
 
     highlight: Rectangle {
         height: 64
-        color: '#FF4304'
+        color: '#2C89A0'
         opacity: 0.2
         z: 2
     }

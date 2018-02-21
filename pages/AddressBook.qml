@@ -54,10 +54,10 @@ Rectangle {
             StandardButton {
                 id: qrfinderButton
                 text: qsTr("Qr Code") + translationManager.emptyString
-                shadowReleasedColor: "#FF4304"
+                shadowReleasedColor: "#2C89A0"
                 shadowPressedColor: "#B32D00"
                 releasedColor: "#5FBCD3"
-                pressedColor: "#FF4304"
+                pressedColor: "#2C89A0"
                 visible : appWindow.qrScannerEnabled
                 enabled : visible
                 width: visible ? 60 * scaleRatio : 0
@@ -104,10 +104,10 @@ Rectangle {
             id: addButton
             Layout.bottomMargin: 17 * scaleRatio
             StandardButton {
-                shadowReleasedColor: "#FF4304"
+                shadowReleasedColor: "#2C89A0"
                 shadowPressedColor: "#B32D00"
                 releasedColor: "#5FBCD3"
-                pressedColor: "#FF4304"
+                pressedColor: "#2C89A0"
                 text: qsTr("Add") + translationManager.emptyString
                 enabled: checkInformation(addressLine.text, paymentIdLine.text, appWindow.persistentSettings.testnet)
 
