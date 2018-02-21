@@ -224,10 +224,10 @@ Item {
             
             MoneroComponents.StandardButton {
                 id: cancelButton
-                shadowReleasedColor: "#FF4304"
+                shadowReleasedColor: "#2C89A0"
                 shadowPressedColor: "#B32D00"
                 releasedColor: "#5FBCD3"
-                pressedColor: "#FF4304"
+                pressedColor: "#2C89A0"
                 text: qsTr("Cancel") + translationManager.emptyString
                 KeyNavigation.tab: passwordInput1
                 onClicked: {
@@ -237,10 +237,10 @@ Item {
             }
             MoneroComponents.StandardButton {
                 id: okButton
-                shadowReleasedColor: "#FF4304"
+                shadowReleasedColor: "#2C89A0"
                 shadowPressedColor: "#B32D00"
                 releasedColor: "#5FBCD3"
-                pressedColor: "#FF4304"
+                pressedColor: "#2C89A0"
                 text: qsTr("Continue")
                 KeyNavigation.tab: cancelButton
                 enabled: passwordInput1.text === passwordInput2.text

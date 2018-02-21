@@ -140,10 +140,10 @@ Rectangle {
                 id: selectBlackballFileButton
                 anchors.rightMargin: 17 * scaleRatio
                 text: qsTr("Select") + translationManager.emptyString
-                shadowReleasedColor: "#FF4304"
+                shadowReleasedColor: "#2C89A0"
                 shadowPressedColor: "#B32D00"
                 releasedColor: "#5FBCD3"
-                pressedColor: "#FF4304"
+                pressedColor: "#2C89A0"
                 enabled: true
                 onClicked: {
                   loadBlackballFileDialog.open()
@@ -172,10 +172,10 @@ Rectangle {
                 id: loadBlackballFileButton
                 anchors.right: parent.right
                 text: qsTr("Load") + translationManager.emptyString
-                shadowReleasedColor: "#FF4304"
+                shadowReleasedColor: "#2C89A0"
                 shadowPressedColor: "#B32D00"
                 releasedColor: "#5FBCD3"
-                pressedColor: "#FF4304"
+                pressedColor: "#2C89A0"
                 enabled: !!appWindow.currentWallet
                 onClicked: appWindow.currentWallet.blackballOutputs(walletManager.urlToLocalPath(loadBlackballFileDialog.fileUrl), true)
             }
@@ -209,10 +209,10 @@ Rectangle {
             StandardButton {
                 id: blackballButton
                 text: qsTr("Blackball") + translationManager.emptyString
-                shadowReleasedColor: "#FF4304"
+                shadowReleasedColor: "#2C89A0"
                 shadowPressedColor: "#B32D00"
                 releasedColor: "#5FBCD3"
-                pressedColor: "#FF4304"
+                pressedColor: "#2C89A0"
                 enabled: !!appWindow.currentWallet && validHex32(blackballOutputLine.text)
                 onClicked: appWindow.currentWallet.blackballOutput(blackballOutputLine.text)
             }
@@ -221,10 +221,10 @@ Rectangle {
                 id: unblackballButton
                 anchors.right: parent.right
                 text: qsTr("Unblackball") + translationManager.emptyString
-                shadowReleasedColor: "#FF4304"
+                shadowReleasedColor: "#2C89A0"
                 shadowPressedColor: "#B32D00"
                 releasedColor: "#5FBCD3"
-                pressedColor: "#FF4304"
+                pressedColor: "#2C89A0"
                 enabled: !!appWindow.currentWallet && validHex32(blackballOutputLine.text)
                 onClicked: appWindow.currentWallet.unblackballOutput(blackballOutputLine.text)
             }
@@ -281,10 +281,10 @@ Rectangle {
             StandardButton {
                 id: getRingButton
                 text: qsTr("Get Ring") + translationManager.emptyString
-                shadowReleasedColor: "#FF4304"
+                shadowReleasedColor: "#2C89A0"
                 shadowPressedColor: "#B32D00"
                 releasedColor: "#5FBCD3"
-                pressedColor: "#FF4304"
+                pressedColor: "#2C89A0"
                 enabled: !!appWindow.currentWallet && validHex32(keyImageLine.text)
                 onClicked: {
                     var ring = appWindow.currentWallet.getRing(keyImageLine.text)
@@ -344,10 +344,10 @@ Rectangle {
             StandardButton {
                 id: setRingButton
                 text: qsTr("Set Ring") + translationManager.emptyString
-                shadowReleasedColor: "#FF4304"
+                shadowReleasedColor: "#2C89A0"
                 shadowPressedColor: "#B32D00"
                 releasedColor: "#5FBCD3"
-                pressedColor: "#FF4304"
+                pressedColor: "#2C89A0"
                 enabled: !!appWindow.currentWallet && validHex32(keyImageLine.text) && validRing(setRingLine.text.trim(), setRingRelative.checked)
                 onClicked: {
                     var outs = setRingLine.text.trim()

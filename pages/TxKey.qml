@@ -184,10 +184,10 @@ Rectangle {
             anchors.topMargin: 17
             width: 60
             text: qsTr("Generate") + translationManager.emptyString
-            shadowReleasedColor: "#FF4304"
+            shadowReleasedColor: "#2C89A0"
             shadowPressedColor: "#B32D00"
             releasedColor: "#5FBCD3"
-            pressedColor: "#FF4304"
+            pressedColor: "#2C89A0"
             enabled: checkTxID(getProofTxIdLine.text) && (getProofAddressLine.text.length == 0 || checkAddress(getProofAddressLine.text, appWindow.persistentSettings.nettype))
             onClicked: {
                 console.log("getProof: Generate clicked: txid " + getProofTxIdLine.text + ", address " + getProofAddressLine.text + ", message: " + getProofMessageLine.text);
@@ -324,10 +324,10 @@ Rectangle {
             anchors.topMargin: 17
             width: 60
             text: qsTr("Check") + translationManager.emptyString
-            shadowReleasedColor: "#FF4304"
+            shadowReleasedColor: "#2C89A0"
             shadowPressedColor: "#B32D00"
             releasedColor: "#5FBCD3"
-            pressedColor: "#FF4304"
+            pressedColor: "#2C89A0"
             enabled: checkTxID(checkProofTxIdLine.text) && checkSignature(checkProofSignatureLine.text) && ((checkProofSignatureLine.text.indexOf("SpendProofV") === 0 && checkProofAddressLine.text.length == 0) || (checkProofSignatureLine.text.indexOf("SpendProofV") !== 0 && checkAddress(checkProofAddressLine.text, appWindow.persistentSettings.nettype)))
             onClicked: {
                 console.log("checkProof: Check clicked: txid " + checkProofTxIdLine.text + ", address " + checkProofAddressLine.text + ", message " + checkProofMessageLine.text + ", signature " + checkProofSignatureLine.text);
