@@ -151,7 +151,7 @@ Item {
                 id: cancelButton
                 shadowReleasedColor: "#FF4304"
                 shadowPressedColor: "#B32D00"
-                releasedColor: "#FF6C3C"
+                releasedColor: "#5FBCD3"
                 pressedColor: "#FF4304"
                 text: qsTr("Cancel") + translationManager.emptyString
                 KeyNavigation.tab: passwordInput
@@ -164,7 +164,7 @@ Item {
                 id: okButton
                 shadowReleasedColor: "#FF4304"
                 shadowPressedColor: "#B32D00"
-                releasedColor: "#FF6C3C"
+                releasedColor: "#5FBCD3"
                 pressedColor: "#FF4304"
                 text: qsTr("Continue")
                 KeyNavigation.tab: cancelButton

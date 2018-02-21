@@ -42,7 +42,7 @@ Rectangle {
 
     function getConnectionStatusColor(status) {
         if (status == Wallet.ConnectionStatus_Connected)
-            return "#FF6C3B"
+            return "#5FBCD2"
         else
             return "#AAAAAA"
     }

@@ -152,7 +152,7 @@ Item {
                 fontSize: 14
                 shadowReleasedColor: "#FF4304"
                 shadowPressedColor: "#B32D00"
-                releasedColor: "#FF6C3C"
+                releasedColor: "#5FBCD3"
                 pressedColor: "#FF4304"
                 text: qsTr("Cancel") + translationManager.emptyString
                 KeyNavigation.tab: input
@@ -167,7 +167,7 @@ Item {
                 fontSize: 14
                 shadowReleasedColor: "#FF4304"
                 shadowPressedColor: "#B32D00"
-                releasedColor: "#FF6C3C"
+                releasedColor: "#5FBCD3"
                 pressedColor: "#FF4304"
                 text: qsTr("Ok")
                 KeyNavigation.tab: cancelButton
