@@ -43,7 +43,7 @@ import moneroComponents.SubaddressModel 1.0
 
 Rectangle {
     id: pageReceive
-    color: "#F0EEEE"
+    color: "#EEEEF8"
     property var model
     property var current_address
     property alias addressText : pageReceive.current_address

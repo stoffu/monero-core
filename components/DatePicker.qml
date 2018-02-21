@@ -94,7 +94,7 @@ Item {
                 anchors.fill: parent
                 shadowReleasedColor: "#DBDBDB"
                 shadowPressedColor: "#888888"
-                releasedColor: "#F0EEEE"
+                releasedColor: "#EEEEF8"
                 pressedColor: "#DBDBDB"
                 icon: "../images/datePicker.png"
                 visible: !datePicker.expanded

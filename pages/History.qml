@@ -45,7 +45,7 @@ Rectangle {
         property bool initialized: false
     }
 
-    color: "#F0EEEE"
+    color: "#EEEEF8"
 
     function getSelectedAmount() {
       if (typeof model === 'undefined' || model == null)

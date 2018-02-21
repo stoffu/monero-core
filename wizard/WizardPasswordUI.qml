@@ -92,7 +92,7 @@ ColumnLayout {
         Layout.topMargin: isAndroid ? 20 * scaleRatio : 40 * scaleRatio
         Layout.fillWidth: true
         id: privacyLevel
-        background: "#F0EEEE"
+        background: "#EEEEF8"
         interactive: false
     }
 

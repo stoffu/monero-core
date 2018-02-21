@@ -34,7 +34,7 @@ import moneroComponents.Wallet 1.0
 
 Rectangle {
     id: root
-    color: "#F0EEEE"
+    color: "#EEEEF8"
     property var currentHashRate: 0
 
     function isDaemonLocal() {
