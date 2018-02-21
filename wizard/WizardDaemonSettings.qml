@@ -111,7 +111,7 @@ ColumnLayout {
             color: "#4A4646"
             textFormat: Text.RichText
 //            horizontalAlignment: Text.AlignHCenter
-            text: qsTr("To be able to communicate with the Monero network your wallet needs to be connected to a Monero node. For best privacy it's recommended to run your own node. \
+            text: qsTr("To be able to communicate with the Aeon network your wallet needs to be connected to a Aeon node. For best privacy it's recommended to run your own node. \
                         <br><br> \
                         If you don't have the option to run an own node there's an option to connect to a remote node.")
                     + translationManager.emptyString
@@ -207,7 +207,7 @@ ColumnLayout {
                 id: remoteNodeEdit
                 property var rna: persistentSettings.remoteNodeAddress
                 daemonAddrText: rna.search(":") != -1 ? rna.split(":")[0].trim() : ""
-                daemonPortText: rna.search(":") != -1 ? (rna.split(":")[1].trim() == "") ? "18081" : persistentSettings.remoteNodeAddress.split(":")[1] : ""
+                daemonPortText: rna.search(":") != -1 ? (rna.split(":")[1].trim() == "") ? "11181" : persistentSettings.remoteNodeAddress.split(":")[1] : ""
             }
         }
     }

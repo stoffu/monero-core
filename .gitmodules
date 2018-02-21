@@ -1,4 +1,5 @@
 [submodule "monero"]
 	path = monero
-	url = https://github.com/monero-project/monero
+	url = https://github.com/stoffu/monero
 	ignore = all
+	branch = aeon-rebase-new

@@ -75,7 +75,7 @@ Rectangle {
             anchors.verticalCenterOffset: -5
             anchors.left: parent.left
             anchors.leftMargin: 20
-            source: "images/moneroLogo2.png"
+            source: "images/aeonLogo2.png"
         }
 
         Grid {
