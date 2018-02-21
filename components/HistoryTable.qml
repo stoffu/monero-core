@@ -124,7 +124,7 @@ ListView {
                 width: 14
                 height: width
                 radius: width / 2
-                color: isOut ? "#FF4F41" : "#36B05B"
+                color: isOut ? "#3F52FF" : "#36B05B"
             }
 
             Item { //separator
@@ -397,7 +397,7 @@ ListView {
                         anchors.bottomMargin: 3
                         font.family: "Arial"
                         font.pixelSize: 16
-                        color: isOut ? "#FF4F41" : "#36B05B"
+                        color: isOut ? "#3F52FF" : "#36B05B"
                         text: isOut ? "↓" : "↑"
                     }
 
@@ -406,7 +406,7 @@ ListView {
                         anchors.bottom: parent.bottom
                         font.family: "Arial"
                         font.pixelSize: 18
-                        color: isOut ? "#FF4F41" : "#36B05B"
+                        color: isOut ? "#3F52FF" : "#36B05B"
                         text:  displayAmount
                     }
                 }
@@ -431,7 +431,7 @@ ListView {
                         anchors.bottom: parent.bottom
                         font.family: "Arial"
                         font.pixelSize: 18
-                        color: "#FF4F41"
+                        color: "#3F52FF"
                         text:  fee
                     }
                 }

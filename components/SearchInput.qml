@@ -224,7 +224,7 @@ Item {
             shadowReleasedColor: "#C60F00"
             shadowPressedColor: "#8C0B00"
             pressedColor: "#C60F00"
-            releasedColor: "#FF4F41"
+            releasedColor: "#3F52FF"
             text: qsTr("SEARCH")
             onClicked: item.searchClicked(input.text, droplist.currentOption)
         }

@@ -319,7 +319,7 @@ Rectangle {
                 anchors.right: parent.right
                 text: qsTr("Address book") + translationManager.emptyString
                 symbol: qsTr("B") + translationManager.emptyString
-                dotColor: "#FF4F41"
+                dotColor: "#3F52FF"
                 under: transferButton
                 onClicked: {
                     parent.previousButton.checked = false

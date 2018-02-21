@@ -166,7 +166,7 @@ ListView {
                 Text {
                     font.family: "Arial"
                     font.pixelSize: 14 * scaleRatio
-                    color: isOut ? "#FF4F41" : "#36B05B"
+                    color: isOut ? "#3F52FF" : "#36B05B"
                     text: isOut ? "↓" : "↑"
                 }
 
@@ -174,7 +174,7 @@ ListView {
                     id: amountText
                     font.family: "Arial"
                     font.pixelSize: 18 * scaleRatio
-                    color: isOut ? "#FF4F41" : "#36B05B"
+                    color: isOut ? "#3F52FF" : "#36B05B"
                     text:  displayAmount
                 }
             }

@@ -153,7 +153,7 @@ Rectangle {
         Rectangle { height: 4; width: parent.width / 5; color: "#6B0072" }
         Rectangle { height: 4; width: parent.width / 5; color: "#5FBCD3" }
         Rectangle { height: 4; width: parent.width / 5; color: "#FFD781" }
-        Rectangle { height: 4; width: parent.width / 5; color: "#FF4F41" }
+        Rectangle { height: 4; width: parent.width / 5; color: "#3F52FF" }
     }
 
     ColumnLayout {
