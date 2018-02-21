@@ -29,7 +29,7 @@ Rectangle {
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
         anchors.leftMargin: 40 * scaleRatio 
-        source: "../images/moneroIcon.png"
+        source: "../images/aeonIcon.png"
     }
 
     Grid {
