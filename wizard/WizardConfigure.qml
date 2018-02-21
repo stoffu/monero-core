@@ -97,7 +97,7 @@ Item {
                 text: qsTr("Kickstart the Aeon blockchain?") + translationManager.emptyString
                 anchors.left: parent.left
                 anchors.right: parent.right
-                background: "#F0EEEE"
+                background: "#EEEEF8"
                 fontColor: "#4A4646"
                 fontSize: 18
                 checkedIcon: "../images/checkedVioletIcon.png"
@@ -126,7 +126,7 @@ Item {
                 text: qsTr("Enable disk conservation mode?") + translationManager.emptyString
                 anchors.left: parent.left
                 anchors.right: parent.right
-                background: "#F0EEEE"
+                background: "#EEEEF8"
                 fontColor: "#4A4646"
                 fontSize: 18
                 checkedIcon: "../images/checkedVioletIcon.png"
@@ -157,7 +157,7 @@ Item {
                 text: qsTr("Allow background mining?") + translationManager.emptyString
                 anchors.left: parent.left
                 anchors.right: parent.right
-                background: "#F0EEEE"
+                background: "#EEEEF8"
                 fontColor: "#4A4646"
                 fontSize: 18
                 checkedIcon: "../images/checkedVioletIcon.png"

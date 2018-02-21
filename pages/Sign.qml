@@ -39,7 +39,7 @@ import moneroComponents.WalletManager 1.0
 Rectangle {
     id: mainLayout
 
-    color: "#F0EEEE"
+    color: "#EEEEF8"
 
     Clipboard { id: clipboard }
 

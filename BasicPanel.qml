@@ -38,7 +38,7 @@ Rectangle {
     width: 470
     // height: paymentId.y + paymentId.height + 12
     height: header.height + header.anchors.topMargin + transferBasic.height
-    color: "#F0EEEE"
+    color: "#EEEEF8"
 
     border.width: 1
     border.color: "#DBDBDB"

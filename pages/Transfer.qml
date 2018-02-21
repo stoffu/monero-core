@@ -40,7 +40,7 @@ Rectangle {
                           int priority, string description)
     signal sweepUnmixableClicked()
 
-    color: "#F0EEEE"
+    color: "#EEEEF8"
     property string startLinkText: "<style type='text/css'>a {text-decoration: none; color: #FF6C3C; font-size: 14px;}</style><font size='2'> (</font><a href='#'>" +
                                    qsTr("Start daemon") +
                                    "</a><font size='2'>)</font>" +
