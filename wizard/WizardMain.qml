@@ -374,7 +374,7 @@ ColumnLayout {
         anchors.margins:  (isMobile) ? 20 * scaleRatio : 50 * scaleRatio
         text: qsTr("USE AEON") + translationManager.emptyString
         shadowReleasedColor: "#2C89A0"
-        shadowPressedColor: "#B32D00"
+        shadowPressedColor: "#164450"
         releasedColor: "#5FBCD3"
         pressedColor: "#2C89A0"
         visible: parent.paths[currentPath][currentPage] === finishPage
@@ -391,7 +391,7 @@ ColumnLayout {
        anchors.margins: (isMobile) ? 20 * scaleRatio : 50
        text: qsTr("Create wallet") + translationManager.emptyString
        shadowReleasedColor: "#2C89A0"
-       shadowPressedColor: "#B32D00"
+       shadowPressedColor: "#164450"
        releasedColor: "#5FBCD3"
        pressedColor: "#2C89A0"
        visible: currentPath === "create_view_only_wallet" &&  parent.paths[currentPath][currentPage] === passwordPage
@@ -423,7 +423,7 @@ ColumnLayout {
        anchors.margins:  (isMobile) ? 20 * scaleRatio : 50
        text: qsTr("Abort") + translationManager.emptyString
        shadowReleasedColor: "#2C89A0"
-       shadowPressedColor: "#B32D00"
+       shadowPressedColor: "#164450"
        releasedColor: "#5FBCD3"
        pressedColor: "#2C89A0"
        visible: currentPath === "create_view_only_wallet" &&  parent.paths[currentPath][currentPage] === passwordPage
