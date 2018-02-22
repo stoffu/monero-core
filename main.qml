@@ -416,7 +416,7 @@ ApplicationWindow {
             console.log("New block found - updating history")
             currentWallet.history.refresh(currentWallet.currentSubaddressAccount)
             timeToUnlock = currentWallet.history.minutesToUnlock
-            leftPanel.minutesToUnlockTxt = (timeToUnlock > 0)? (timeToUnlock == 20)? qsTr("Unlocked balance (waiting for block)") : qsTr("Unlocked balance (~%1 min)").arg(timeToUnlock) : qsTr("Unlocked balance");
+            leftPanel.minutesToUnlockTxt = (timeToUnlock > 0)? (timeToUnlock == 40)? qsTr("Unlocked balance (waiting for block)") : qsTr("Unlocked balance (~%1 min)").arg(timeToUnlock) : qsTr("Unlocked balance");
         }
     }
 
