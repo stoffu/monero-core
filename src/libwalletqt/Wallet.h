@@ -52,6 +52,7 @@ class Wallet : public QObject
     Q_PROPERTY(QString daemonLogPath READ getDaemonLogPath CONSTANT)
     Q_PROPERTY(QString walletLogPath READ getWalletLogPath CONSTANT)
     Q_PROPERTY(quint64 walletCreationHeight READ getWalletCreationHeight WRITE setWalletCreationHeight NOTIFY walletCreationHeightChanged)
+    Q_PROPERTY(quint32 defaultRingSize READ getDefaultRingSize)
 
 public:
 
@@ -178,21 +179,21 @@ public:
 
     //! creates transaction
     Q_INVOKABLE PendingTransaction * createTransaction(const QString &dst_addr, const QString &payment_id,
-                                                       quint64 amount, quint32 mixin_count,
+                                                       quint64 amount, quint32 ring_size,
                                                        PendingTransaction::Priority priority);
 
     //! creates async transaction
     Q_INVOKABLE void createTransactionAsync(const QString &dst_addr, const QString &payment_id,
-                                            quint64 amount, quint32 mixin_count,
+                                            quint64 amount, quint32 ring_size,
                                             PendingTransaction::Priority priority);
 
     //! creates transaction with all outputs
     Q_INVOKABLE PendingTransaction * createTransactionAll(const QString &dst_addr, const QString &payment_id,
-                                                       quint32 mixin_count, PendingTransaction::Priority priority);
+                                                       quint32 ring_size, PendingTransaction::Priority priority);
 
     //! creates async transaction with all outputs
     Q_INVOKABLE void createTransactionAllAsync(const QString &dst_addr, const QString &payment_id,
-                                               quint32 mixin_count, PendingTransaction::Priority priority);
+                                               quint32 ring_size, PendingTransaction::Priority priority);
 
     //! creates sweep unmixable transaction
     Q_INVOKABLE PendingTransaction * createSweepUnmixableTransaction();
@@ -277,6 +278,8 @@ public:
     QString getDaemonLogPath() const;
     QString getWalletLogPath() const;
 
+    quint32 getDefaultRingSize() const;
+
     // Blackalled outputs
     Q_INVOKABLE bool blackballOutput(const QString &pubkey);
     Q_INVOKABLE bool blackballOutputs(const QList<QString> &pubkeys, bool add);
@@ -311,7 +314,7 @@ signals:
     void walletCreationHeightChanged();
 
     // emitted when transaction is created async
-    void transactionCreated(PendingTransaction * transaction, QString address, QString paymentId, quint32 mixinCount);
+    void transactionCreated(PendingTransaction * transaction, QString address, QString paymentId, quint32 ringSize);
 
     void connectionStatusChanged(ConnectionStatus status) const;
 

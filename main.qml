@@ -554,7 +554,7 @@ ApplicationWindow {
         return false;
     }
 
-    function onTransactionCreated(pendingTransaction,address,paymentId,mixinCount){
+    function onTransactionCreated(pendingTransaction,address,paymentId,ringSize){
         console.log("Transaction created");
         hideProcessingSplash();
         transaction = pendingTransaction;
@@ -595,7 +595,7 @@ ApplicationWindow {
                         + (paymentId === "" ? "" : (qsTr("\nPayment ID: ") + paymentId))
                         + qsTr("\n\nAmount: ") + walletManager.displayAmount(transaction.amount)
                         + qsTr("\nFee: ") + walletManager.displayAmount(transaction.fee)
-                        + qsTr("\n\nRingsize: ") + (mixinCount + 1)
+                        + qsTr("\n\nRingsize: ") + (ringSize === 0 ? currentWallet.defaultRingSize : ringSize)
                         + qsTr("\n\Number of transactions: ") + transaction.txCount
                         + (transactionDescription === "" ? "" : (qsTr("\n\nDescription: ") + transactionDescription))
                         + translationManager.emptyString
@@ -606,12 +606,12 @@ ApplicationWindow {
 
 
     // called on "transfer"
-    function handlePayment(address, paymentId, amount, mixinCount, priority, description, createFile) {
+    function handlePayment(address, paymentId, amount, ringSize, priority, description, createFile) {
         console.log("Creating transaction: ")
         console.log("\taddress: ", address,
                     ", payment_id: ", paymentId,
                     ", amount: ", amount,
-                    ", mixins: ", mixinCount,
+                    ", ring_size: ", ringSize,
                     ", priority: ", priority,
                     ", description: ", description);
 
@@ -651,9 +651,9 @@ ApplicationWindow {
         }
 
         if (amount === "(all)")
-            currentWallet.createTransactionAllAsync(address, paymentId, mixinCount, priority);
+            currentWallet.createTransactionAllAsync(address, paymentId, ringSize, priority);
         else
-            currentWallet.createTransactionAsync(address, paymentId, amountxmr, mixinCount, priority);
+            currentWallet.createTransactionAsync(address, paymentId, amountxmr, ringSize, priority);
     }
 
     //Choose where to save transaction

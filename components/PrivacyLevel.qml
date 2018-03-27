@@ -63,6 +63,7 @@ Item {
             width: row.x
 
             color: {
+                if(item.fillLevel === 0) return "#FF4F41"
                 if(item.fillLevel < 3) return "#5FBCD3"
                 if(item.fillLevel < 13) return "#AAFFBB"
                 return "#36B25C"
@@ -125,7 +126,7 @@ Item {
                     id: delegateItem2
                     currentX: x + row2.x
                     currentIndex: index
-                    mainTick: currentIndex === 0
+                    mainTick: currentIndex === 1
                     Component.onCompleted: {
                         row.positions[currentIndex] = delegateItem2
                     }
@@ -150,6 +151,10 @@ Item {
                     }
                 }
             }
+        }
+        Component.onCompleted: {
+            fillRect.width = Qt.binding(function(){ return row.positions[1].currentX + row.x })
+            item.fillLevel = 1
         }
     }
 }
