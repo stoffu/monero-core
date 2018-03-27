@@ -584,7 +584,7 @@ ApplicationWindow {
         return false;
     }
 
-    function onTransactionCreated(pendingTransaction,address,paymentId,mixinCount){
+    function onTransactionCreated(pendingTransaction,address,paymentId,ringSize){
         console.log("Transaction created");
         hideProcessingSplash();
         transaction = pendingTransaction;
@@ -621,9 +621,9 @@ ApplicationWindow {
             transactionConfirmationPopup.text += (paymentId === "" ? "" : (qsTr("\nPayment ID: ") + paymentId));
             transactionConfirmationPopup.text +=  qsTr("\n\nAmount: ") + walletManager.displayAmount(transaction.amount);
             transactionConfirmationPopup.text +=  qsTr("\nFee: ") + walletManager.displayAmount(transaction.fee);
-            transactionConfirmationPopup.text +=  qsTr("\nRingsize: ") + (mixinCount + 1);
-            if(mixinCount !== 6){
-                transactionConfirmationPopup.text +=  qsTr("\n\nWARNING: non default ring size, which may harm your privacy. Default of 7 is recommended.");
+            transactionConfirmationPopup.text +=  qsTr("\nRingsize: ") + ringSize;
+            if(ringSize !== 3){
+                transactionConfirmationPopup.text +=  qsTr("\n\nWARNING: non default ring size, which may harm your privacy. Default of 3 is recommended.");
             }
             transactionConfirmationPopup.text +=  qsTr("\n\nNumber of transactions: ") + transaction.txCount
             transactionConfirmationPopup.text +=  (transactionDescription === "" ? "" : (qsTr("\nDescription: ") + transactionDescription))
@@ -639,16 +639,20 @@ ApplicationWindow {
 
 
     // called on "transfer"
-    function handlePayment(address, paymentId, amount, mixinCount, priority, description, createFile) {
+    function handlePayment(address, paymentId, amount, ringSize, priority, description, createFile) {
         console.log("Creating transaction: ")
         console.log("\taddress: ", address,
                     ", payment_id: ", paymentId,
                     ", amount: ", amount,
-                    ", mixins: ", mixinCount,
+                    ", ring_size: ", ringSize,
                     ", priority: ", priority,
                     ", description: ", description);
 
         showProcessingSplash("Creating transaction");
+        if (ringSize == 0)
+            ringSize = currentWallet.defaultRingSize;
+        if (ringSize == 0)
+            ringSize = 3;
 
         transactionDescription = description;
 
@@ -684,9 +688,9 @@ ApplicationWindow {
         }
 
         if (amount === "(all)")
-            currentWallet.createTransactionAllAsync(address, paymentId, mixinCount, priority);
+            currentWallet.createTransactionAllAsync(address, paymentId, ringSize, priority);
         else
-            currentWallet.createTransactionAsync(address, paymentId, amountxmr, mixinCount, priority);
+            currentWallet.createTransactionAsync(address, paymentId, amountxmr, ringSize, priority);
     }
 
     //Choose where to save transaction

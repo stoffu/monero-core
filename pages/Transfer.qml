@@ -49,7 +49,7 @@ Rectangle {
     Clipboard { id: clipboard }
 
     function scaleValueToMixinCount(scaleValue) {
-        var scaleToMixinCount = [6,7,8,9,10,11,12,13,14,16,18,20,22,25];
+        var scaleToMixinCount = [0,2,3,4,5,6,7,8,9,11,13,15,17,19];
         if (scaleValue < scaleToMixinCount.length) {
             return scaleToMixinCount[scaleValue];
         } else {
@@ -379,7 +379,7 @@ Rectangle {
                   console.log("amount: " + amountLine.text)
                   addressLine.text = addressLine.text.trim()
                   paymentIdLine.text = paymentIdLine.text.trim()
-                  root.paymentClicked(addressLine.text, paymentIdLine.text, amountLine.text, scaleValueToMixinCount(privacyLevelItem.fillLevel),
+                  root.paymentClicked(addressLine.text, paymentIdLine.text, amountLine.text, persistentSettings.transferShowAdvanced ? (scaleValueToMixinCount(privacyLevelItem.fillLevel) + 1) : 0,
                                  priority, descriptionLine.text)
 
               }
