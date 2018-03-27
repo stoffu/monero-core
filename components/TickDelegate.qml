@@ -54,7 +54,7 @@ Item {
             font.pixelSize: 12 * scaleRatio
             color: MoneroComponents.Style.defaultFontColor
             text: {
-                if(currentIndex === 0) return qsTr("Default") + translationManager.emptyString
+                if(currentIndex === 1) return qsTr("Default") + translationManager.emptyString
                 if(currentIndex === 13) return qsTr("High") + translationManager.emptyString
                 return ""
             }
