@@ -21,8 +21,8 @@ QtObject {
     property string inputBorderColorInActive: Qt.rgba(255, 255, 255, 0.32)
     property string inputBorderColorInvalid: Qt.rgba(255, 0, 0, 0.40)
 
-    property string buttonBackgroundColor: "#FA6800"
-    property string buttonBackgroundColorHover: "#E65E00"
+    property string buttonBackgroundColor: "#19AFE1"
+    property string buttonBackgroundColorHover: "#00ACE6"
     property string buttonBackgroundColorDisabled: "#707070"
     property string buttonBackgroundColorDisabledHover: "#808080"
     property string buttonTextColor: "white"
