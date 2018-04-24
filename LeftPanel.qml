@@ -473,6 +473,7 @@ Rectangle {
                 height: 1
             }
             // ------------- Shared RingDB tab ---------------
+            /*
             MenuButton {
                 id: sharedringdbButton
                 anchors.left: parent.left
@@ -495,6 +496,7 @@ Rectangle {
                 color: "#313131"
                 height: 1
             }
+            */
 
 
             // ------------- Sign/verify tab ---------------
