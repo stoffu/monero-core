@@ -102,12 +102,11 @@ ApplicationWindow {
         if(seq === "Ctrl+S") middlePanel.state = "Transfer"
         else if(seq === "Ctrl+R") middlePanel.state = "Receive"
         else if(seq === "Ctrl+K") middlePanel.state = "TxKey"
-        else if(seq === "Ctrl+S") middlePanel.state = "SharedRingDB"
         else if(seq === "Ctrl+H") middlePanel.state = "History"
         else if(seq === "Ctrl+B") middlePanel.state = "AddressBook"
         else if(seq === "Ctrl+M") middlePanel.state = "Mining"
         else if(seq === "Ctrl+I") middlePanel.state = "Sign"
-        else if(seq === "Ctrl+A") middlePanel.state = "SharedRingDB"
+        // else if(seq === "Ctrl+A") middlePanel.state = "SharedRingDB"
         else if(seq === "Ctrl+E") middlePanel.state = "Settings"
         else if(seq === "Ctrl+D") middlePanel.state = "Advanced"
         else if(seq === "Ctrl+Tab" || seq === "Alt+Tab") {
@@ -129,8 +128,8 @@ ApplicationWindow {
             else if(middlePanel.state === "Receive") middlePanel.state = "History"
             else if(middlePanel.state === "History") middlePanel.state = "Mining"
             else if(middlePanel.state === "Mining") middlePanel.state = "TxKey"
-            else if(middlePanel.state === "TxKey") middlePanel.state = "SharedRingDB"
-            else if(middlePanel.state === "SharedRingDB") middlePanel.state = "Sign"
+            else if(middlePanel.state === "TxKey") middlePanel.state = "Sign"
+            // else if(middlePanel.state === "SharedRingDB") middlePanel.state = "Sign"
             else if(middlePanel.state === "Sign") middlePanel.state = "Settings"
         } else if(seq === "Ctrl+Shift+Backtab" || seq === "Alt+Shift+Backtab") {
             /*
@@ -146,8 +145,8 @@ ApplicationWindow {
             else if(middlePanel.state === "Transfer") middlePanel.state = "Dashboard"
             */
             if(middlePanel.state === "Settings") middlePanel.state = "Sign"
-            else if(middlePanel.state === "Sign") middlePanel.state = "SharedRingDB"
-            else if(middlePanel.state === "SharedRingDB") middlePanel.state = "TxKey"
+            else if(middlePanel.state === "Sign") middlePanel.state = "TxKey"
+            // else if(middlePanel.state === "SharedRingDB") middlePanel.state = "TxKey"
             else if(middlePanel.state === "TxKey") middlePanel.state = "Mining"
             else if(middlePanel.state === "Mining") middlePanel.state = "History"
             else if(middlePanel.state === "History") middlePanel.state = "Receive"
