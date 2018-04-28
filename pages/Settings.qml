@@ -640,7 +640,7 @@ Rectangle {
             Layout.fillWidth: true
             font.pixelSize: 14
             textFormat: Text.RichText
-            property var txt: "<style type='text/css'>a {text-decoration: none; color: #FF6C3C}</style>" + qsTr("Wallet creation height: ") + (currentWallet ? currentWallet.walletCreationHeight : "") + translationManager.emptyString
+            property var txt: "<style type='text/css'>a {text-decoration: none; color: #5FBCD3}</style>" + qsTr("Wallet creation height: ") + (currentWallet ? currentWallet.walletCreationHeight : "") + translationManager.emptyString
             property var linkTxt: qsTr(" <a href='#'>(Click to change)</a>") + translationManager.emptyString
             text: (typeof currentWallet == "undefined") ? "" : txt + linkTxt
 
