@@ -312,7 +312,7 @@ Rectangle {
                 anchors.right: parent.right
                 text: qsTr("Send") + translationManager.emptyString
                 symbol: qsTr("S") + translationManager.emptyString
-                dotColor: "#FF6C3C"
+                dotColor: "#5FBCD2"
                 onClicked: {
                     parent.previousButton.checked = false
                     parent.previousButton = transferButton
@@ -337,7 +337,7 @@ Rectangle {
                 anchors.right: parent.right
                 text: qsTr("Address book") + translationManager.emptyString
                 symbol: qsTr("B") + translationManager.emptyString
-                dotColor: "#FF4F41"
+                dotColor: "#5FBCD2"
                 under: transferButton
                 onClicked: {
                     parent.previousButton.checked = false
@@ -473,6 +473,7 @@ Rectangle {
                 height: 1
             }
             // ------------- Shared RingDB tab ---------------
+            /*
             MenuButton {
                 id: sharedringdbButton
                 anchors.left: parent.left
@@ -495,6 +496,7 @@ Rectangle {
                 color: "#313131"
                 height: 1
             }
+            */
 
 
             // ------------- Sign/verify tab ---------------

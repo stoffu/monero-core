@@ -62,7 +62,7 @@ Item {
             //radius: 2
             width: row.x
 
-            color: "#FF6C3C"
+            color: "#3D9EFF"
 
             Timer {
                 interval: 500
@@ -121,7 +121,7 @@ Item {
                     id: delegateItem2
                     currentX: x + row2.x
                     currentIndex: index
-                    mainTick: currentIndex === 0
+                    mainTick: currentIndex === 1
                     Component.onCompleted: {
                         row.positions[currentIndex] = delegateItem2
                     }
@@ -146,6 +146,10 @@ Item {
                     }
                 }
             }
+        }
+        Component.onCompleted: {
+            fillRect.width = Qt.binding(function(){ return row.positions[1].currentX + row.x })
+            item.fillLevel = 1
         }
     }
 }

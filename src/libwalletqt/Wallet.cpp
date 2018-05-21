@@ -373,58 +373,58 @@ void Wallet::pauseRefresh() const
 }
 
 PendingTransaction *Wallet::createTransaction(const QString &dst_addr, const QString &payment_id,
-                                              quint64 amount, quint32 mixin_count,
+                                              quint64 amount, quint32 ring_size,
                                               PendingTransaction::Priority priority)
 {
     std::set<uint32_t> subaddr_indices;
     Monero::PendingTransaction * ptImpl = m_walletImpl->createTransaction(
-                dst_addr.toStdString(), payment_id.toStdString(), amount, mixin_count,
+                dst_addr.toStdString(), payment_id.toStdString(), amount, ring_size,
                 static_cast<Monero::PendingTransaction::Priority>(priority), currentSubaddressAccount(), subaddr_indices);
     PendingTransaction * result = new PendingTransaction(ptImpl,0);
     return result;
 }
 
 void Wallet::createTransactionAsync(const QString &dst_addr, const QString &payment_id,
-                               quint64 amount, quint32 mixin_count,
+                               quint64 amount, quint32 ring_size,
                                PendingTransaction::Priority priority)
 {
     QFuture<PendingTransaction*> future = QtConcurrent::run(this, &Wallet::createTransaction,
-                                  dst_addr, payment_id,amount, mixin_count, priority);
+                                  dst_addr, payment_id,amount, ring_size, priority);
     QFutureWatcher<PendingTransaction*> * watcher = new QFutureWatcher<PendingTransaction*>();
 
     connect(watcher, &QFutureWatcher<PendingTransaction*>::finished,
-            this, [this, watcher,dst_addr,payment_id,mixin_count]() {
+            this, [this, watcher,dst_addr,payment_id,ring_size]() {
         QFuture<PendingTransaction*> future = watcher->future();
         watcher->deleteLater();
-        emit transactionCreated(future.result(),dst_addr,payment_id,mixin_count);
+        emit transactionCreated(future.result(),dst_addr,payment_id,ring_size);
     });
     watcher->setFuture(future);
 }
 
 PendingTransaction *Wallet::createTransactionAll(const QString &dst_addr, const QString &payment_id,
-                                                 quint32 mixin_count, PendingTransaction::Priority priority)
+                                                 quint32 ring_size, PendingTransaction::Priority priority)
 {
     std::set<uint32_t> subaddr_indices;
     Monero::PendingTransaction * ptImpl = m_walletImpl->createTransaction(
-                dst_addr.toStdString(), payment_id.toStdString(), Monero::optional<uint64_t>(), mixin_count,
+                dst_addr.toStdString(), payment_id.toStdString(), Monero::optional<uint64_t>(), ring_size,
                 static_cast<Monero::PendingTransaction::Priority>(priority), currentSubaddressAccount(), subaddr_indices);
     PendingTransaction * result = new PendingTransaction(ptImpl, this);
     return result;
 }
 
 void Wallet::createTransactionAllAsync(const QString &dst_addr, const QString &payment_id,
-                               quint32 mixin_count,
+                               quint32 ring_size,
                                PendingTransaction::Priority priority)
 {
     QFuture<PendingTransaction*> future = QtConcurrent::run(this, &Wallet::createTransactionAll,
-                                  dst_addr, payment_id, mixin_count, priority);
+                                  dst_addr, payment_id, ring_size, priority);
     QFutureWatcher<PendingTransaction*> * watcher = new QFutureWatcher<PendingTransaction*>();
 
     connect(watcher, &QFutureWatcher<PendingTransaction*>::finished,
-            this, [this, watcher,dst_addr,payment_id,mixin_count]() {
+            this, [this, watcher,dst_addr,payment_id,ring_size]() {
         QFuture<PendingTransaction*> future = watcher->future();
         watcher->deleteLater();
-        emit transactionCreated(future.result(),dst_addr,payment_id,mixin_count);
+        emit transactionCreated(future.result(),dst_addr,payment_id,ring_size);
     });
     watcher->setFuture(future);
 }
@@ -719,7 +719,13 @@ void Wallet::setWalletCreationHeight(quint64 height)
 
 QString Wallet::getDaemonLogPath() const
 {
-    return QString::fromStdString(m_walletImpl->getDefaultDataDir()) + "/bitmonero.log";
+    return QString::fromStdString(m_walletImpl->getDefaultDataDir()) + "/aeon.log";
+}
+
+quint32 Wallet::getDefaultRingSize() const
+{
+    const quint32 r = m_walletImpl->defaultRingSize();
+    return r == 0 ? 3 : r;
 }
 
 bool Wallet::blackballOutput(const QString &pubkey)
