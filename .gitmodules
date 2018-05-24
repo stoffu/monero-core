@@ -1,4 +1,4 @@
 [submodule "monero"]
 	path = monero
-	url = https://github.com/aeonix/aeon-rebase
+	url = https://github.com/aeonix/aeon
 	ignore = all
