@@ -239,6 +239,8 @@ Rectangle {
                 + translationManager.emptyString
               labelButtonText: qsTr("Resolve") + translationManager.emptyString
               placeholderText: "Wm.. / Wz.. / Xn.."
+              wrapMode: Text.WrapAnywhere
+              addressValidation: true
               onInputLabelLinkActivated: { appWindow.showPageRequest("AddressBook") }
           }
 
@@ -303,17 +305,19 @@ Rectangle {
 
       RowLayout {
           // payment id input
-          LineEdit {
+          LineEditMulti {
               id: paymentIdLine
               fontBold: true
               labelText: qsTr("Payment ID <font size='2'>( Optional )</font>") + translationManager.emptyString
               placeholderText: qsTr("16 or 64 hexadecimal characters") + translationManager.emptyString
               Layout.fillWidth: true
+              wrapMode: Text.WrapAnywhere
+              addressValidation: false
           }
       }
 
       RowLayout {
-          LineEdit {
+          LineEditMulti {
               id: descriptionLine
               labelText: qsTr("Description <font size='2'>( Optional )</font>") + translationManager.emptyString
               placeholderText: qsTr("Saved to local wallet history") + translationManager.emptyString
