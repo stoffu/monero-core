@@ -1340,7 +1340,6 @@ ApplicationWindow {
             onTransferClicked: {
                 middlePanel.state = "Transfer";
                 middlePanel.flickable.contentY = 0;
-                mainFlickable.contentY = 0;
                 if(isMobile) {
                     hideMenu();
                 }
