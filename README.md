@@ -115,7 +115,7 @@ Packaging for your favorite distribution would be a welcome contribution!
 
     ```
     cd aeon-gui
-    ./build.sh
+    QT_SELECT=5 ./build.sh
     ```
 
 The executable can be found in the build/release/bin folder.
