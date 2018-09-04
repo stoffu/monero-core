@@ -193,12 +193,8 @@ Rectangle {
                       inlineButtonText: qsTr("All") + translationManager.emptyString
                       inlineButton.onClicked: amountLine.text = "(all)"
 
-                      validator: DoubleValidator {
-                          bottom: 0.0
-                          top: 18446744.073709551615
-                          decimals: 12
-                          notation: DoubleValidator.StandardNotation
-                          locale: "C"
+                      validator: RegExpValidator {
+                          regExp: /(\d{1,8})([.]\d{1,12})?$/
                       }
                   }
               }
@@ -571,7 +567,7 @@ Rectangle {
                     + (transaction.paymentId[i] == "" ? "" : qsTr("\n\payment ID: ") + transaction.paymentId[i])
                     + qsTr("\nAmount: ") + walletManager.displayAmount(transaction.amount(i))
                     + qsTr("\nFee: ") + walletManager.displayAmount(transaction.fee(i))
-                    + qsTr("\nRingsize: ") + transaction.mixin(i+1)
+                    + qsTr("\nRingsize: ") + (transaction.mixin(i)+1)
 
                     // TODO: add descriptions to unsigned_tx_set?
     //              + (transactionDescription === "" ? "" : (qsTr("\n\nDescription: ") + transactionDescription))
