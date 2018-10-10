@@ -117,7 +117,8 @@ LIBS += -L$$WALLET_ROOT/lib \
         -llmdb \
         -lepee \
         -lunbound \
-        -leasylogging \
+        -lsodium \
+        -leasylogging
 }
 
 android {
@@ -127,6 +128,7 @@ android {
         -llmdb \
         -lepee \
         -lunbound \
+        -lsodium \
         -leasylogging
 }
 
@@ -146,6 +148,7 @@ ios {
         -llmdb \
         -lepee \
         -lunbound \
+        -lsodium \
         -leasylogging
 
     LIBS+= \
@@ -245,6 +248,7 @@ win32 {
         -licutu \
         -liconv \
         -lssl \
+        -lsodium \
         -lcrypto \
         -Wl,-Bdynamic \
         -lwinscard \
@@ -290,6 +294,7 @@ linux {
         -lboost_program_options \
         -lssl \
         -llmdb \
+        -lsodium \
         -lcrypto
 
     if(!android) {
@@ -329,6 +334,7 @@ macx {
         -lboost_chrono \
         -lboost_program_options \
         -lssl \
+        -lsodium \
         -lcrypto \
         -ldl
     LIBS+= -framework PCSC
