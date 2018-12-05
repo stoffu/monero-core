@@ -51,7 +51,7 @@ Rectangle {
         console.log("Settings page loaded");
 
         if(typeof daemonManager != "undefined"){
-            appWindow.daemonRunning = persistentSettings.useRemoteNode ? false : daemonManager.running(persistentSettings.nettype);
+            daemonRunning = persistentSettings.useRemoteNode ? false : appWindow.daemonRunning;
         }
 
         logLevelDropdown.update()
@@ -256,8 +256,8 @@ Rectangle {
                     lineEditFontColor: "white"
                     lineEditBorderColor: Style.inputBorderColorActive
 
-                    daemonAddrLabelText: qsTr("Address")
-                    daemonPortLabelText: qsTr("Port")
+                    daemonAddrLabelText: qsTr("Address") + translationManager.emptyString
+                    daemonPortLabelText: qsTr("Port") + translationManager.emptyString
                     daemonAddrText: persistentSettings.bootstrapNodeAddress.split(":")[0].trim()
                     daemonPortText: {
                         var node_split = persistentSettings.bootstrapNodeAddress.split(":");
@@ -353,7 +353,7 @@ Rectangle {
             StandardButton {
                 id: startDaemonButton
                 small: true
-                visible: !appWindow.daemonRunning
+                visible: !daemonRunning
                 text: qsTr("Start Local Node") + translationManager.emptyString
                 onClicked: {
                     // Update bootstrap daemon address
@@ -368,7 +368,7 @@ Rectangle {
             StandardButton {
                 id: stopDaemonButton
                 small: true
-                visible: appWindow.daemonRunning
+                visible: daemonRunning
                 text: qsTr("Stop Local Node") + translationManager.emptyString
                 onClicked: {
                     appWindow.stopDaemon()

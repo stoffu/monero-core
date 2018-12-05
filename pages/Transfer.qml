@@ -220,7 +220,7 @@ Rectangle {
               ListModel {
                    id: priorityModelV5
 
-                   ListElement { column1: qsTr("Default") ; column2: ""; priority: 0}
+                   ListElement { column1: qsTr("Automatic") ; column2: ""; priority: 0}
                    ListElement { column1: qsTr("Slow (x0.25 fee)") ; column2: ""; priority: 1}
                    ListElement { column1: qsTr("Normal (x1 fee)") ; column2: ""; priority: 2 }
                    ListElement { column1: qsTr("Fast (x5 fee)") ; column2: ""; priority: 3 }
@@ -535,6 +535,30 @@ Rectangle {
                     submitTxDialog.open();
                 }
             }
+            
+            StandardButton {
+                id: exportKeyImagesButton
+                text: qsTr("Export key images") + translationManager.emptyString
+                small: true
+                visible: !appWindow.viewOnly
+                enabled: pageRoot.enabled
+                onClicked: {
+                    console.log("Transfer: export key images clicked")
+                    exportKeyImagesDialog.open();
+                }
+            }
+
+            StandardButton {
+                id: importKeyImagesButton
+                text: qsTr("Import key images") + translationManager.emptyString
+                small: true
+                visible: appWindow.viewOnly && walletManager.isDaemonLocal(appWindow.currentDaemonAddress)
+                enabled: pageRoot.enabled
+                onClicked: {
+                    console.log("Transfer: import key images clicked")
+                    importKeyImagesDialog.open();
+                }
+            }
         }
     }
 
@@ -625,6 +649,35 @@ Rectangle {
             console.log("Canceled")
         }
 
+    }
+    
+    //ExportKeyImagesDialog
+    FileDialog {
+        id: exportKeyImagesDialog
+        selectMultiple: false
+        selectExisting: false
+        onAccepted: {
+            console.log(walletManager.urlToLocalPath(exportKeyImagesDialog.fileUrl))
+            currentWallet.exportKeyImages(walletManager.urlToLocalPath(exportKeyImagesDialog.fileUrl));
+        }
+        onRejected: {
+            console.log("Canceled");
+        }
+    }
+
+    //ImportKeyImagesDialog
+    FileDialog {
+        id: importKeyImagesDialog
+        selectMultiple: false
+        selectExisting: true
+        title: qsTr("Please choose a file") + translationManager.emptyString
+        onAccepted: {
+            console.log(walletManager.urlToLocalPath(importKeyImagesDialog.fileUrl))
+            currentWallet.importKeyImages(walletManager.urlToLocalPath(importKeyImagesDialog.fileUrl));
+        }
+        onRejected: {
+            console.log("Canceled");
+        }
     }
 
 

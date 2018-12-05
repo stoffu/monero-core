@@ -20,12 +20,11 @@ git -C $MONERO_DIR fetch
 # git -C $MONERO_DIR checkout release-v0.12
 
 # get monero core tag
+pushd $MONERO_DIR
 get_tag
+popd
 # create local monero branch
 git -C $MONERO_DIR checkout -B $VERSIONTAG
-
-git -C $MONERO_DIR submodule init
-git -C $MONERO_DIR submodule update
 
 # Merge monero PR dependencies
 
@@ -47,6 +46,9 @@ done
 # revert back to old git config
 $(git -C $MONERO_DIR config user.name "$OLD_GIT_USER")
 $(git -C $MONERO_DIR config user.email "$OLD_GIT_EMAIL")
+
+git -C $MONERO_DIR submodule init
+git -C $MONERO_DIR submodule update
 
 # Build libwallet if it doesnt exist
 if [ ! -f $MONERO_DIR/lib/libwallet_merged.a ]; then 
@@ -75,8 +77,7 @@ else
 fi
 
 if [ "$BUILD_LIBWALLET" != true ]; then
-    # exit this script
-    return
+    exit 0
 fi
 
 echo "GUI_MONERO_VERSION=\"$VERSIONTAG\"" > $MONERO_DIR/version.sh
@@ -187,14 +188,14 @@ elif [ "$platform" == "mingw64" ]; then
     # Do something under Windows NT platform
     echo "Configuring build for MINGW64.."
     BOOST_ROOT=/mingw64/boost
-    cmake -D CMAKE_BUILD_TYPE=$CMAKE_BUILD_TYPE -D STATIC=ON -D BOOST_ROOT="$BOOST_ROOT" -D ARCH="x86-64" -D BUILD_GUI_DEPS=ON -D INSTALL_VENDORED_LIBUNBOUND=ON -D CMAKE_INSTALL_PREFIX="$MONERO_DIR" -G "MSYS Makefiles" ../..
+    cmake -D CMAKE_BUILD_TYPE=$CMAKE_BUILD_TYPE -D STATIC=ON -D BOOST_ROOT="$BOOST_ROOT" -D ARCH="x86-64" -D BUILD_GUI_DEPS=ON -D INSTALL_VENDORED_LIBUNBOUND=ON -D CMAKE_INSTALL_PREFIX="$MONERO_DIR" -G "MSYS Makefiles" -D CMAKE_TOOLCHAIN_FILE=../../cmake/64-bit-toolchain.cmake -D MSYS2_FOLDER=c:/msys64 ../..
 
 ## Windows 32
 elif [ "$platform" == "mingw32" ]; then
     # Do something under Windows NT platform
     echo "Configuring build for MINGW32.."
     BOOST_ROOT=/mingw32/boost
-    cmake -D CMAKE_BUILD_TYPE=$CMAKE_BUILD_TYPE -D STATIC=ON -D Boost_DEBUG=ON -D BOOST_ROOT="$BOOST_ROOT" -D ARCH="i686" -D BUILD_64=OFF -D BUILD_GUI_DEPS=ON -D INSTALL_VENDORED_LIBUNBOUND=ON -D CMAKE_INSTALL_PREFIX="$MONERO_DIR" -G "MSYS Makefiles" ../..
+    cmake -D CMAKE_BUILD_TYPE=$CMAKE_BUILD_TYPE -D STATIC=ON -D Boost_DEBUG=ON -D BOOST_ROOT="$BOOST_ROOT" -D ARCH="i686" -D BUILD_64=OFF -D BUILD_GUI_DEPS=ON -D INSTALL_VENDORED_LIBUNBOUND=ON -D CMAKE_INSTALL_PREFIX="$MONERO_DIR" -G "MSYS Makefiles" -D CMAKE_TOOLCHAIN_FILE=../../cmake/32-bit-toolchain.cmake -D MSYS2_FOLDER=c:/msys32 ../..
     make_exec="mingw32-make"
 else
     echo "Unknown platform, configuring general build"
@@ -237,12 +238,13 @@ eval make -C $MONERO_DIR/build/$BUILD_TYPE/external/easylogging++ all install
 eval make -C $MONERO_DIR/build/$BUILD_TYPE/external/db_drivers/liblmdb all install
 
 # Install libunbound
-echo "Installing libunbound..."
-pushd $MONERO_DIR/build/$BUILD_TYPE/external/unbound
-# no need to make, it was already built as dependency for libwallet
-# make -j$CPU_CORE_COUNT
-$make_exec install -j$CPU_CORE_COUNT
-popd
-
+if [ -d $MONERO_DIR/build/$BUILD_TYPE/external/unbound ]; then
+    echo "Installing libunbound..."
+    pushd $MONERO_DIR/build/$BUILD_TYPE/external/unbound
+    # no need to make, it was already built as dependency for libwallet
+    # make -j$CPU_CORE_COUNT
+    $make_exec install -j$CPU_CORE_COUNT
+    popd
+fi
 
 popd
