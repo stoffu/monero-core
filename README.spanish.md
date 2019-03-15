@@ -34,7 +34,7 @@ Al igual que con muchos proyectos de desarrollo, el repositorio en Github se con
 
 ## Apoyando el Proyecto
 
-Aeon es una empresa 100% patrocinada por la comunidad. Si desea sumarse a nuestros esfuerzos, lo más fácil que puede hacer es respaldar financieramente el proyecto. Se pueden hacer donaciones de Aeon y de Bitcoin a ** donate.aeon.cash ** si se usa un cliente que admite el [OpenAlias](https://openalias.org) estándar.
+Aeon es una empresa 100% patrocinada por la comunidad. Si desea sumarse a nuestros esfuerzos, lo más fácil que puede hacer es respaldar financieramente el proyecto. Se pueden hacer donaciones de Aeon y de Bitcoin a **donate.aeon.cash** si se usa un cliente que admite el [OpenAlias](https://openalias.org) estándar.
 
 La dirección de donación de Aeon es: `WmsSWgtT1JPg5e3cK41hKXSHVpKW7e47bjgiKmWZkYrhSS5LhRemNyqayaSBtAQ6517eo5PtH9wxHVmM78JDZSUu2W8PqRiNs` (viewkey: `71bf19a7348ede17fa487167710dac401ef1556851bfd36b76040facf051630b`)
 
