@@ -1340,7 +1340,6 @@ ApplicationWindow {
             onTransferClicked: {
                 middlePanel.state = "Transfer";
                 middlePanel.flickable.contentY = 0;
-                mainFlickable.contentY = 0;
                 if(isMobile) {
                     hideMenu();
                 }
@@ -1635,7 +1634,7 @@ ApplicationWindow {
             showMoneroLogo: true
             onCloseClicked: appWindow.close();
             onMaximizeClicked: {
-                appWindow.visibility = appWindow.visibility !== Window.FullScreen ? Window.FullScreen :
+                appWindow.visibility = appWindow.visibility !== Window.Maximized ? Window.Maximized :
                                                                                     Window.Windowed
             }
             onMinimizeClicked: appWindow.visibility = Window.Minimized
