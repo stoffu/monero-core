@@ -43,7 +43,7 @@ Rectangle {
     signal sweepUnmixableClicked()
 
     color: "transparent"
-    property int mixin: 2  // (ring size 3)
+    property int ringsize: 3
     property string startLinkText: qsTr("<style type='text/css'>a {text-decoration: none; color: #5FBCD3; font-size: 14px;}</style><font size='2'> (</font><a href='#'>Start daemon</a><font size='2'>)</font>") + translationManager.emptyString
     property bool showAdvanced: false
 
@@ -359,7 +359,7 @@ Rectangle {
                   console.log("amount: " + amountLine.text)
                   addressLine.text = addressLine.text.trim()
                   paymentIdLine.text = paymentIdLine.text.trim()
-                  root.paymentClicked(addressLine.text, paymentIdLine.text, amountLine.text, root.mixin,
+                  root.paymentClicked(addressLine.text, paymentIdLine.text, amountLine.text, root.ringsize,
                                  priority, descriptionLine.text)
 
               }
@@ -442,7 +442,7 @@ Rectangle {
                     console.log("amount: " + amountLine.text)
                     addressLine.text = addressLine.text.trim()
                     paymentIdLine.text = paymentIdLine.text.trim()
-                    root.paymentClicked(addressLine.text, paymentIdLine.text, amountLine.text, root.mixin, priority, descriptionLine.text)
+                    root.paymentClicked(addressLine.text, paymentIdLine.text, amountLine.text, root.ringsize, priority, descriptionLine.text)
 
                 }
             }
