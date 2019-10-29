@@ -40,7 +40,7 @@ ColumnLayout {
     signal createWalletFromDeviceClicked()
     opacity: 0
     visible: false
-    property int buttonSize: (isMobile) ? 80 * scaleRatio : 140 * scaleRatio
+    property int buttonSize: (isMobile) ? 80 * scaleRatio : 190 * scaleRatio
     property int buttonImageSize: (isMobile) ? buttonSize - 10 * scaleRatio : buttonSize - 30 * scaleRatio
 
     function onPageClosed() {
@@ -229,6 +229,7 @@ ColumnLayout {
             }
         }
 
+/*
         GridLayout {
             Layout.fillHeight: true
             Layout.fillWidth: true
@@ -273,6 +274,7 @@ ColumnLayout {
                 text: qsTr("Create a new wallet from hardware device") + translationManager.emptyString
             }
         }
+*/
     }
 
     ColumnLayout {
