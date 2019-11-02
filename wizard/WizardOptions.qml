@@ -37,6 +37,7 @@ ColumnLayout {
     signal createWalletClicked()
     signal recoveryWalletClicked()
     signal openWalletClicked()
+    signal createWalletFromDeviceClicked()
     opacity: 0
     visible: false
     property int buttonSize: (isMobile) ? 80 * scaleRatio : 190 * scaleRatio
@@ -227,6 +228,53 @@ ColumnLayout {
                 wrapMode: Text.WordWrap
             }
         }
+
+/*
+        GridLayout {
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+            flow: !isMobile ? GridLayout.TopToBottom : GridLayout.LeftToRight
+            rowSpacing: 20 * scaleRatio
+            columnSpacing: 10 * scaleRatio
+
+            Rectangle {
+                Layout.preferredHeight: page.buttonSize
+                Layout.preferredWidth: page.buttonSize
+                radius: page.buttonSize
+                color: createWalletFromDeviceArea.containsMouse ? "#DBDBDB" : "#FFFFFF"
+
+
+                Image {
+                    width: page.buttonImageSize
+                    height: page.buttonImageSize
+                    fillMode: Image.PreserveAspectFit
+                    horizontalAlignment: Image.AlignRight
+                    verticalAlignment: Image.AlignTop
+                    anchors.centerIn: parent
+                    source: "qrc:///images/createWalletFromDevice.png"
+                }
+
+                MouseArea {
+                    id: createWalletFromDeviceArea
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    onClicked: {
+                        page.createWalletFromDeviceClicked()
+                    }
+                }
+            }
+
+            Text {
+                Layout.preferredWidth: page.buttonSize
+                font.family: "Arial"
+                font.pixelSize: 16 * scaleRatio
+                color: "#4A4949"
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.WordWrap
+                text: qsTr("Create a new wallet from hardware device") + translationManager.emptyString
+            }
+        }
+*/
     }
 
     ColumnLayout {

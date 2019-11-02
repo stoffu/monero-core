@@ -129,7 +129,8 @@ Rectangle {
                 copyButton: true
                 addressValidation: false
                 readOnly: true
-                wrapAnywhere: false
+                wrapMode: Text.WordWrap
+                fontColor: "white"
             }
         }
 
