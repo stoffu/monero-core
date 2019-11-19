@@ -116,7 +116,11 @@ int main(int argc, char *argv[])
     QCommandLineOption logPathOption(QStringList() << "l" << "log-file",
         QCoreApplication::translate("main", "Log to specified file"),
         QCoreApplication::translate("main", "file"));
+
+    QCommandLineOption testQmlOption("test-qml");
+    testQmlOption.setFlags(QCommandLineOption::HiddenFromHelp);
     parser.addOption(logPathOption);
+    parser.addOption(testQmlOption);
     parser.addHelpOption();
     parser.process(app);
 
@@ -304,6 +308,10 @@ int main(int argc, char *argv[])
         qCritical() << "Error: no root objects";
         return 1;
     }
+
+    // QML loaded successfully.
+    if (parser.isSet(testQmlOption))
+        return 0;
 
 #ifdef WITH_SCANNER
     QObject *qmlCamera = rootObject->findChild<QObject*>("qrCameraQML");
