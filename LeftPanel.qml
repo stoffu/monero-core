@@ -426,6 +426,7 @@ Rectangle {
             }
 
             // ------------- Mining tab ---------------
+            /*
             MenuButton {
                 id: miningButton
                 visible: !isAndroid && !isIOS
@@ -450,6 +451,7 @@ Rectangle {
                 color: miningButton.checked || settingsButton.checked ? "#1C1C1C" : "#313131"
                 height: 1
             }
+            */
             // ------------- TxKey tab ---------------
             MenuButton {
                 id: txkeyButton
