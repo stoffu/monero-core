@@ -296,7 +296,12 @@ Rectangle{
                 daemonPortText: rna.search(":") != -1 ? (rna.split(":")[1].trim() == "") ? "11181" : rna.split(":")[1] : ""
                 onEditingFinished: {
                     persistentSettings.remoteNodeAddress = remoteNodeEdit.getAddress();
-                    console.log("setting remote node to " + persistentSettings.remoteNodeAddress)
+                    console.log("setting remote node to " + persistentSettings.remoteNodeAddress);
+                    if (persistentSettings.is_trusted_daemon) {
+                        persistentSettings.is_trusted_daemon = !persistentSettings.is_trusted_daemon
+                        setTrustedDaemonCheckBox.checked = !setTrustedDaemonCheckBox.checked
+                        appWindow.showStatusMessage(qsTr("Remote node updated. Trusted daemon has been reset. Mark again, if desired."), 8);
+                    }
                 }
             }
 
@@ -328,39 +333,31 @@ Rectangle{
                 }
             }
 
-            Rectangle {
-                id: rectConnectRemote
-                Layout.topMargin: 12 * scaleRatio
-                color: MoneroComponents.Style.buttonBackgroundColorDisabled
-                width: btnConnectRemote.width + 40
-                height: 26
-                radius: 2
-
-                Text {
-                    id: btnConnectRemote
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    color: MoneroComponents.Style.defaultFontColor
-                    font.family: MoneroComponents.Style.fontRegular.name
-                    font.pixelSize: 14 * scaleRatio
-                    font.bold: true
-                    text: qsTr("Connect") + translationManager.emptyString
+            MoneroComponents.CheckBox {
+                id: setTrustedDaemonCheckBox
+                checked: persistentSettings.is_trusted_daemon
+                onClicked: {
+                    persistentSettings.is_trusted_daemon = !persistentSettings.is_trusted_daemon
+                    currentWallet.setTrustedDaemon(persistentSettings.is_trusted_daemon)
                 }
+                text: qsTr("Mark as Trusted Daemon") + translationManager.emptyString
+            }
 
-                MouseArea {
-                    cursorShape: Qt.PointingHandCursor
-                    anchors.fill: parent
-                    onClicked: {
-                        // Update daemon login
-                        persistentSettings.remoteNodeAddress = remoteNodeEdit.getAddress();
-                        persistentSettings.daemonUsername = daemonUsername.text;
-                        persistentSettings.daemonPassword = daemonPassword.text;
-                        persistentSettings.useRemoteNode = true
-    
-                        currentWallet.setDaemonLogin(persistentSettings.daemonUsername, persistentSettings.daemonPassword);
-    
-                        appWindow.connectRemoteNode()
-                    }
+            MoneroComponents.StandardButton {
+                id: btnConnectRemote
+                enabled: remoteNodeEdit.isValid()
+                small: true
+                text: qsTr("Connect") + translationManager.emptyString
+                onClicked: {
+                    // Update daemon login
+                    persistentSettings.remoteNodeAddress = remoteNodeEdit.getAddress();
+                    persistentSettings.daemonUsername = daemonUsername.text;
+                    persistentSettings.daemonPassword = daemonPassword.text;
+                    persistentSettings.useRemoteNode = true
+
+                    currentWallet.setDaemonLogin(persistentSettings.daemonUsername, persistentSettings.daemonPassword);
+
+                    appWindow.connectRemoteNode()
                 }
             }
         }
@@ -374,41 +371,14 @@ Rectangle{
             anchors.right: parent.right
             visible: !isMobile && !persistentSettings.useRemoteNode
 
-            Rectangle {
-                color: "transparent"
-                Layout.topMargin: 0 * scaleRatio
-                Layout.bottomMargin: 8 * scaleRatio
-                Layout.preferredHeight: 24 * scaleRatio
-                Layout.preferredWidth: parent.width
-
-                Rectangle {
-                    id: rectStartStopNode
-                    color: MoneroComponents.Style.buttonBackgroundColor
-                    width: btnStartStopNode.width + 40
-                    height: 24
-                    radius: 2
-
-                    Text {
-                        id: btnStartStopNode
-                        anchors.verticalCenter: parent.verticalCenter
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        color: MoneroComponents.Style.defaultFontColor
-                        font.family: MoneroComponents.Style.fontRegular.name
-                        font.pixelSize: 14 * scaleRatio
-                        font.bold: true
-                        text: (appWindow.daemonRunning ? qsTr("Stop local node") : qsTr("Start daemon")) + translationManager.emptyString
-                    }
-
-                    MouseArea {
-                        cursorShape: Qt.PointingHandCursor
-                        anchors.fill: parent
-                        onClicked: {
-                            if (appWindow.daemonRunning) {
-                                appWindow.stopDaemon();
-                            } else {
-                                appWindow.startDaemon(persistentSettings.daemonFlags);
-                            }
-                        }
+            MoneroComponents.StandardButton {
+                small: true
+                text: (appWindow.daemonRunning ? qsTr("Stop local node") : qsTr("Start daemon")) + translationManager.emptyString
+                onClicked: {
+                    if (appWindow.daemonRunning) {
+                        appWindow.stopDaemon();
+                    } else {
+                        appWindow.startDaemon(persistentSettings.daemonFlags);
                     }
                 }
             }
