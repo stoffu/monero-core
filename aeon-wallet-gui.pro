@@ -266,7 +266,7 @@ win32 {
         -lwsock32 \
         -lIphlpapi \
         -lcrypt32 \
-        -lhidapi \
+#        -lhidapi \
         -lgdi32
     
     !contains(QMAKE_TARGET.arch, x86_64) {
@@ -289,8 +289,8 @@ linux {
         QMAKE_LFLAGS += -static-libgcc -static-libstdc++
    #     contains(QT_ARCH, x86_64) {
             LIBS+= -lunbound \
-                   -lusb-1.0 \
-                   -lhidapi-hidraw \
+#                   -lusb-1.0 \
+#                   -lhidapi-hidraw \
                    -ludev
    #     }
     } else {
@@ -310,7 +310,7 @@ linux {
         -lssl \
         -llmdb \
         -lsodium \
-        -lhidapi-libusb \
+#        -lhidapi-libusb \
         -lcrypto
 
     if(!android) {
@@ -349,7 +349,7 @@ macx {
         -L$$OPENSSL_LIBRARY_DIRS \
         -L/usr/local/opt/boost/lib \
         -lboost_serialization \
-        -lhidapi \
+#        -lhidapi \
         -lboost_thread-mt \
         -lboost_system-mt \
         -lboost_system \

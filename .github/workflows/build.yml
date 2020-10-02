@@ -8,9 +8,11 @@ jobs:
     runs-on: macOS-latest
     
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
     - name: update brew and install dependencies
-      run: brew update && brew install boost hidapi zmq libpgm miniupnpc ldns expat libunwind-headers protobuf qt5 
+      run: brew update && brew install boost zmq libpgm miniupnpc ldns expat libunwind-headers protobuf qt5 
     - name: fetch zmq.hpp
       run: brew tap osrf/simulation && brew install cppzmq
     - name: build
@@ -34,7 +36,7 @@ jobs:
     - name: update apt
       run: sudo apt update
     - name: install aeon dependencies
-      run: sudo apt -y install build-essential cmake libboost-all-dev miniupnpc libunbound-dev graphviz doxygen libunwind8-dev pkg-config libssl-dev libzmq3-dev libsodium-dev libhidapi-dev libnorm-dev libusb-1.0-0-dev libpgm-dev
+      run: sudo apt -y install build-essential cmake libboost-all-dev miniupnpc libunbound-dev graphviz doxygen libunwind8-dev pkg-config libssl-dev libzmq3-dev libsodium-dev libnorm-dev libpgm-dev
     - name: install aeon gui dependencies
       run: sudo apt -y install qtbase5-dev qt5-default qtdeclarative5-dev qml-module-qtquick-controls qml-module-qtquick-controls2 qml-module-qtquick-dialogs qml-module-qtquick-xmllistmodel qml-module-qt-labs-settings qml-module-qt-labs-folderlistmodel qttools5-dev-tools qml-module-qtquick-templates2 libqt5svg5-dev xvfb
     - name: build
@@ -54,7 +56,7 @@ jobs:
     - uses: eine/setup-msys2@v1
       with:
         update: true
-        install: mingw-w64-x86_64-toolchain make mingw-w64-x86_64-cmake mingw-w64-x86_64-boost mingw-w64-x86_64-openssl mingw-w64-x86_64-zeromq mingw-w64-x86_64-libsodium mingw-w64-x86_64-hidapi mingw-w64-x86_64-protobuf-c mingw-w64-x86_64-libusb git mingw-w64-x86_64-qt5
+        install: mingw-w64-x86_64-toolchain make mingw-w64-x86_64-cmake mingw-w64-x86_64-boost mingw-w64-x86_64-openssl mingw-w64-x86_64-zeromq mingw-w64-x86_64-libsodium mingw-w64-x86_64-protobuf-c git mingw-w64-x86_64-qt5
     - name: build
       run: |
         sed -i 's/CONFIG\ +=\ qtquickcompiler//' aeon-wallet-gui.pro
